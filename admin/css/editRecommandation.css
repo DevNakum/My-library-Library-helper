@@ -1,0 +1,544 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: montserrat;
+}
+
+header {
+    text-align: center;
+    font-size: 60px;
+}
+
+nav {
+    background: #0082e6;
+    height: 60px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 55px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    background: #1b9bff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.search {
+    margin-top: 8%;
+    margin-left: 29%;
+}
+
+.txtSearch {
+    margin-left: 7%;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid rgb(161, 160, 160);
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.btnSearch {
+    margin-left: 15px;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    background-color: #0082e6;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btnSearch:hover {
+    opacity: 0.8;
+}
+
+.bookIssue {
+    background: #0082e6;
+    border-radius: 33px;
+    padding: 25px 118px 23px 113px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.viewStatus {
+    background: #0082e6;
+    border-radius: 33px;
+    margin-top: 40px;
+    padding: 25px 117px 23px 108px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.bookRecommandation {
+    background: #0082e6;
+    border-radius: 33px;
+    margin-top: 40px;
+    padding: 25px 48px 23px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.submit {
+    margin-top: 7%;
+}
+
+.btnSubmit {
+    margin-left: 48%;
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #0082e6;
+    cursor: pointer;
+}
+
+.btnSubmit:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .txtSearch {
+        margin-left: 2%;
+        padding: 10px 10px 10px 10px;
+        border: 2px solid rgb(161, 160, 160);
+        border-radius: 7px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 858px) {
+    header {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 96px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .txtSearch {
+        margin-left: -3%;
+        padding: 10px 10px 10px 10px;
+        border: 2px solid rgb(161, 160, 160);
+        border-radius: 7px;
+        font-size: 20px;
+    }
+
+    .btnSubmit {
+        margin-left: 46%;
+        font-size: 20px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        color: white;
+        background-color: #0082e6;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .txtSearch {
+        margin-left: -10%;
+        padding: 10px 10px 10px 10px;
+        border: 2px solid rgb(161, 160, 160);
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .btnSubmit {
+        margin-left: 43%;
+        font-size: 20px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        color: white;
+        background-color: #0082e6;
+        cursor: pointer;
+    }
+
+    .btnSearch {
+        margin-left: 12%;
+        padding: 10px 10px 10px 10px;
+        font-size: 12px;
+        background-color: #0082e6;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .checkbtn {
+        display: block;
+        margin-top: -6px;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 100;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    header {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .txtSearch {
+        margin-left: -25%;
+        padding: 10px 10px 10px 10px;
+        border: 2px solid rgb(161, 160, 160);
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .btnSearch {
+        margin-left: 40px;
+        padding: 10px 10px 10px 10px;
+        font-size: 12px;
+        background-color: #0082e6;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .checkbtn {
+        display: block;
+        margin-top: -6px;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 100;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .btnSubmit {
+        margin-left: 39%;
+        font-size: 20px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        color: white;
+        background-color: #0082e6;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 307px) {
+    header {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    label.logo {
+        color: white;
+        font-size: 20px;
+        line-height: 55px;
+        padding: 0 15px;
+        font-weight: bold;
+    }
+
+    .txtSearch {
+        margin-left: -23%;
+        padding: 10px 2px 10px 2px;
+        border: 2px solid rgb(161, 160, 160);
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .search {
+        margin-top: 8%;
+        margin-left: 22%;
+    }
+
+
+    .btnSearch {
+        margin-left: 10%;
+        margin-top: 5%;
+        padding: 10px 10px 10px 10px;
+        font-size: 12px;
+        background-color: #0082e6;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .checkbtn {
+        display: block;
+        margin-top: -6px;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 90vh;
+        background: #2c3e50;
+        top: 114px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 100;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .btnSubmit {
+        margin-left: 38%;
+        font-size: 15px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        color: white;
+        background-color: #0082e6;
+        cursor: pointer;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #8dc6f1;
+}
+
+.tblReturnReport {
+    margin-top: 7%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #0082e6;
+}
+
+tr:nth-child(even) {
+    background-color: white
+}

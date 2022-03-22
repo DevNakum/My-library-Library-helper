@@ -1,0 +1,338 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+header{
+  text-align: center;
+  font-size: 60px;
+
+}
+nav{
+  background: #0082e6;
+  height: 60px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 55px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+  cursor: pointer;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+.btnBookIssueReport {
+  border-radius: 20px;
+  background-color: #0082e6;
+  text-align: center;
+  /* width: 400px; */
+  /* height: 70px; */
+  border: 1px solid;
+  padding: 17px 89px 17px 78px;
+  font-size: 24px;
+  margin-top: 54px;
+  cursor: pointer;
+  color: white;
+}
+.btnBookReturnedReport {
+  border-radius: 20px;
+  background-color: #0082e6;
+  text-align: center;
+  /* width: 400px; */
+  /* height: 70px; */
+  border: 1px solid;
+  padding: 17px 72px 17px 69px;
+  font-size: 24px;
+  margin-top: 54px;
+  cursor: pointer;
+  color: white;
+}
+
+
+input {
+  background-color: #0082e6;
+  color: white;
+  padding: 17px 85px 17px 85px;
+  font-size: 22px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btnBookIssueReport:hover {
+
+  opacity: 0.8;
+}
+.btnBookReturnedReport:hover {
+
+  opacity: 0.8;
+}
+input:hover {
+  opacity: 0.8;
+}
+
+.contain{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+  .contain{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+@media (max-width: 858px){
+  header {
+    text-align: center;
+    font-size: 32px;
+}
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .contain{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+@media (max-width: 720px){
+  header {
+    text-align: center;
+    font-size: 28px;
+}
+  .checkbtn{
+    display: block;
+    margin-top: -6px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .contain{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+@media (max-width: 520px){
+  header {
+    text-align: center;
+    font-size: 28px;
+}
+  .checkbtn{
+    display: block;
+    margin-top: -6px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .contain{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  input {
+    background-color: #0082e6;
+    color: white;
+    padding: 17px 51px 17px 42px;
+    font-size: 17px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.btnBookIssueReport{
+  border-radius: 20px;
+  background-color: #0082e6;
+  text-align: center;
+  /* width: 400px; */
+  /* height: 70px; */
+  border: 1px solid;
+  padding: 17px 55px 17px 55px;
+  font-size: 17px;
+  margin-top: 54px;
+  cursor: pointer;
+  color: white;
+}
+.btnBookReturnedReport {
+  border-radius: 20px;
+  background-color: #0082e6;
+  text-align: center;
+  /* width: 400px; */
+  /* height: 70px; */
+  border: 1px solid;
+  padding: 17px 45px 17px 47px;
+  font-size: 17px;
+  margin-top: 54px;
+  cursor: pointer;
+  color: white;
+}
+}
+@media (max-width: 307px){
+  header {
+    text-align: center;
+    font-size: 28px;
+}
+label.logo{
+  color: white;
+  font-size: 25px;
+  line-height: 55px;
+  padding: 0 15px;
+  font-weight: bold;
+}
+  .checkbtn{
+    display: block;
+    margin-top: -6px;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 120px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+}
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .contain{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+
+
+
