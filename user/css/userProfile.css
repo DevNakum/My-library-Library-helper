@@ -1,0 +1,324 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: montserrat;
+}
+header {
+  text-align: center;
+  font-size: 60px;
+}
+nav {
+  background: #0082e6;
+  height: 60px;
+  width: 100%;
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 55px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,
+a:hover {
+  background: #1b9bff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+.buttons {
+  display: block;
+  justify-content: center;
+}
+.btn {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+}
+.btnBookIssue {
+  background: #0082e6;
+  border-radius: 33px;
+  padding: 25px 118px 23px 113px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+.btnViewStatus {
+  background: #0082e6;
+  border-radius: 33px;
+  margin-top: 40px;
+  padding: 25px 117px 23px 108px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+.btnBookRecommandation {
+  background: #0082e6;
+  border-radius: 33px;
+  margin-top: 40px;
+  padding: 25px 48px 23px 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+  .btn {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+  }
+}
+@media (max-width: 858px) {
+  header {
+    text-align: center;
+    font-size: 32px;
+  }
+  .btn {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+  }
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+@media (max-width: 720px) {
+  header {
+    text-align: center;
+    font-size: 28px;
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+  }
+  .checkbtn {
+    display: block;
+    margin-top: -6px;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 100;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  .btnBookIssue {
+    border-radius: 20px;
+    background-color: #0082e6;
+    text-align: center;
+    /* width: 400px; */
+    /* height: 70px; */
+    border: 1px solid;
+    padding: 17px 70px 17px 70px;
+    font-size: 17px;
+    margin-top: 54px;
+    cursor: pointer;
+    color: white;
+}
+  .btnViewStatus {
+    border-radius: 20px;
+    background-color: #0082e6;
+    text-align: center;
+    /* width: 400px; */
+    /* height: 70px; */
+    border: 1px solid;
+    padding: 17px 70px 17px 69px;
+    font-size: 17px;
+    margin-top: 54px;
+    cursor: pointer;
+    color: white;
+}
+
+.btnBookRecommandation {
+  border-radius: 20px;
+  background-color: #0082e6;
+  text-align: center;
+  /* width: 400px; */
+  /* height: 70px; */
+  border: 1px solid;
+  padding: 17px 26px 17px 21px;
+  font-size: 17px;
+  margin-top: 54px;
+  cursor: pointer;
+  color: white;
+}
+}
+@media (max-width: 307px) {
+  header {
+    text-align: center;
+    font-size: 28px;
+  }
+  .checkbtn {
+    display: block;
+    margin-top: -6px;
+  }
+  label.logo{
+    color: white;
+    font-size: 20px;
+    line-height: 55px;
+    padding: 0 15px;
+    font-weight: bold;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 120px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 100;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  .btnBookIssue {
+    border-radius: 20px;
+    background-color: #0082e6;
+    text-align: center;
+    /* width: 400px; */
+    /* height: 70px; */
+    border: 1px solid;
+    padding: 17px 70px 17px 70px;
+    font-size: 17px;
+    margin-top: 54px;
+    cursor: pointer;
+    color: white;
+}
+  .btnViewStatus {
+    border-radius: 20px;
+    background-color: #0082e6;
+    text-align: center;
+    /* width: 400px; */
+    /* height: 70px; */
+    border: 1px solid;
+    padding: 17px 70px 17px 69px;
+    font-size: 17px;
+    margin-top: 54px;
+    cursor: pointer;
+    color: white;
+}
+
+  .btnBookRecommandation {
+    border-radius: 20px;
+    background-color: #0082e6;
+    text-align: center;
+    /* width: 400px; */
+    /* height: 70px; */
+    border: 1px solid;
+    padding: 17px 41px 17px 47px;
+    font-size: 17px;
+    margin-top: 54px;
+    cursor: pointer;
+    color: white;
+}
+}
+

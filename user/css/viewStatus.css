@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+  }
+  header{
+    text-align: center;
+    font-size: 60px;
+  
+  }
+  nav{
+    background: #0082e6;
+    height: 60px;
+    width: 100%;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 55px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+    cursor: pointer;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  .name{
+    margin-left: 38px;
+  }
+  .id{
+    margin-left: 635px;
+  }
+  .top{
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  #check{
+    display: none;
+  }
+  .buttons{
+    display: block;
+    justify-content: center;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+    .name{
+        margin-left: 3rem;
+      }
+      .id{
+        margin-left: 16rem;
+      }
+      .top{
+        margin-top: 3rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+  }
+  @media (max-width: 858px){
+    header {
+      text-align: center;
+      font-size: 32px;
+  }
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+    .name{
+        margin-left: 2rem;
+      }
+      .id{
+        margin-left: 18rem;
+      }
+      .top{
+        margin-top: 3rem;
+        font-size: 26px;
+        font-weight: bold;
+      }
+  }
+  @media (max-width: 720px){
+    header {
+      text-align: center;
+      font-size: 28px;
+  }
+    .checkbtn{
+      display: block;
+      margin-top: -6px;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+    .name{
+        margin-left: 1rem;
+      }
+      .id{
+        margin-left: 9rem;
+      }
+      .top{
+        margin-top: 1rem;
+        font-size: 15px;
+        font-weight: bold;
+      }
+  }
+  @media (max-width: 307px){
+    header {
+      text-align: center;
+      font-size: 28px;
+  }
+    .checkbtn{
+      display: block;
+      margin-top: -6px;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 120px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+    .name{
+        margin-left: 1rem;
+      }
+      .id{
+        margin-left: 9rem;
+      }
+      .top{
+        margin-top: 1rem;
+        font-size: 15px;
+        font-weight: bold;
+      }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #8dc6f1;
+  }
+  
+  .tblReturnReport {
+    margin-top: 7%;
+  }
+  
+  th,
+  td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #0082e6;
+  }
+  
+  tr:nth-child(even) {
+    background-color: white
+  }

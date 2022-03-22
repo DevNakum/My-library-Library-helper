@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+div {
+  list-style-position: inside;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Jost", sans-serif;
+  font-size: 75px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+p {
+  font-size: 25px;
+  margin-top: 0px;
+  
+}
+li {
+  font-size: 25px;
+}
+
+hr {
+  border-width: 10px 0 0 0;
+  border-style: dotted;
+  width: 10%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
