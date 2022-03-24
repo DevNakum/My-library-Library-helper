@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +27,11 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
     </ul>
-  </nav>
+  </nav> -->
+
+  <head>
+    <link rel="stylesheet" href="../css/Admin_Profile.css" />
+  </head>
   <div class="Container">
 
     <div class="Button">
@@ -47,6 +52,6 @@
     </div>
 
   </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

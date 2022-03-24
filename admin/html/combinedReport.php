@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -27,7 +28,11 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
     </ul>
-  </nav>
+  </nav> -->
+  <head>
+    <link rel="stylesheet" href="../css/combinedReport.css">
+  </head>
+  
     <div class="search">
             <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">   
             <button type="submit" class="btnSearch">Search</button>    
@@ -69,6 +74,6 @@
     </table>
   </div>
 
-</body>
+<!-- </body>
 
-</html>
+</html> -->

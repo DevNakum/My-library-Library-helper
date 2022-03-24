@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -24,9 +25,11 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
         </ul>
-    </nav>
+    </nav> -->
 
-
+    <head>
+        <link rel="stylesheet" href="../css/editRecommandation.css">
+    </head>
 
     <div class="tblReturnReport" style="overflow-x:auto;" name="table">
         <table>
@@ -69,6 +72,6 @@
     <div class="submit">
         <button class="btnSubmit" name="btnSubmit">Submit</button>
     </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

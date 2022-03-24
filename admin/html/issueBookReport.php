@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -27,34 +28,38 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
     </ul>
-  </nav>
-    <div class="search">
-            <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">   
-            <button type="submit" class="btnSearch" name="btnSearch">Search</button>    
-            <button class="btnDownload" name="btnDownload">Download</button>      
-    </div>
-    
-    
+  </nav> -->
 
-  <div class="tblReturnReport" style="overflow-x:auto;">
-    <table>
-      <tr>
-        <th>Issue Date</th>
-        <th>Issueded By</th>
-        <th>Book Name</th>
-        <th>Edition</th>
-        <th>Author</th>
-      </tr>
-      <tr>
-        <td name="issueDate">13-03-2021</td>
-        <td name="issuedBy">20CE056</td>
-        <td name="bookName">BALAGURU SWAMI</td>
-        <td name="bookEdition">2nd</td>
-        <td name="bookAuthor">BALAGURU</td>
-      </tr>
-    </table>
-  </div>
+<head>
+  <link rel="stylesheet" href="../css/issueBookReport.css">
+</head>
+<div class="search">
+  <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
+  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
+  <button class="btnDownload" name="btnDownload">Download</button>
+</div>
 
-</body>
 
-</html>
+
+<div class="tblReturnReport" style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Issue Date</th>
+      <th>Issueded By</th>
+      <th>Book Name</th>
+      <th>Edition</th>
+      <th>Author</th>
+    </tr>
+    <tr>
+      <td name="issueDate">13-03-2021</td>
+      <td name="issuedBy">20CE056</td>
+      <td name="bookName">BALAGURU SWAMI</td>
+      <td name="bookEdition">2nd</td>
+      <td name="bookAuthor">BALAGURU</td>
+    </tr>
+  </table>
+</div>
+
+<!-- </body>
+
+</html> -->

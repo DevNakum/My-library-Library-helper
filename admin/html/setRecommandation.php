@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -24,7 +25,10 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
         </ul>
-    </nav>
+    </nav> -->
+    <head>
+        <link rel="stylesheet" href="../css/setRecommandation.css">
+    </head>
     <div class="search">
         <select name="dept" id="optDept" style="border-style: solid;">
 
@@ -85,7 +89,7 @@
     <div class="submit">
         <button class="btnSubmit">Submit</button>
     </div>
-
+<!-- 
 </body>
 
-</html>
+</html> -->

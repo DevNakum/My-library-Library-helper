@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include "header.php"; ?>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -24,7 +25,10 @@
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
     </ul>
-  </nav>
+  </nav> -->
+  <head>
+    <link rel="stylesheet" href="../css/bookReturnReport.css">
+  </head>
   <div class="search">
     <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
     <button type="submit" class="btnSearch"name="btnSearch">Search</button>
@@ -70,6 +74,6 @@
     </table>
   </div>
 
-</body>
+<!-- </body>
 
-</html>
+</html> -->
