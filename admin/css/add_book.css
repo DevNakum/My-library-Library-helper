@@ -27,9 +27,6 @@ label {
   display: inline-block;
 }
 
-
-
-
 .container {
   position: absolute;
   border-radius: 5px;
@@ -463,6 +460,11 @@ a.active,a:hover{
     border-radius: 10px;
     color: white;
 }
+
+.ClsDisabled {
+  background-color: gray!important;
+}
+
 .btnSetRecommandation {
   margin-left: 4%;
   background-color: #0082e6;

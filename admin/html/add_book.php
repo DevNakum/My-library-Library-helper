@@ -1,3 +1,4 @@
+<!-- Header is included over here -->
 <?php include "header.php"; ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -33,23 +34,45 @@
 </head>
 
 <div class="container">
-    <div class="tblRow">
-        <div class="col-25">
-            <label for="bookName">Book Name</label>
-        </div>
-        <div class="col-75">
-            <input type="text" id="txtBookName" name="txtBookName">
-        </div>
-    </div>
+    <!-- The Form is included over here -->
+    <form action="save_data_add_book.php" method="post">
+        <div class="tblRow">
+            <div class="col-25">
+                <label for="bookName">Book Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="txtBookName" name="txtBookName"
 
-    <form action="" method="post">
+                <?php
+
+                    if(isset($_GET['id'])) {
+                        $val = $_GET['b_name'];
+                        echo "value='{$val}' disabled";
+                    }
+
+                ?>
+
+                >
+            </div>
+        </div>
 
         <div class="tblRow">
             <div class="col-25">
                 <label for="bookAuthor">Book Author</label>
             </div>
             <div class="col-75">
-                <input type="text" id="txtBookAuthor" name="txtBookAuthor">
+                <input type="text" id="txtBookAuthor" name="txtBookAuthor"
+
+                <?php
+
+                    if(isset($_GET['id'])) {
+                        $val = $_GET['b_author'];
+                        echo "value='{$val}' disabled";
+                    }
+
+                ?>
+
+                >
             </div>
         </div>
         <div class="tblRow">
@@ -57,7 +80,18 @@
                 <label for="bookEdition">Book Edition</label>
             </div>
             <div class="col-75">
-                <input type="text" id="txtBookEdition" name="txtBookEdition">
+                <input type="text" id="txtBookEdition" name="txtBookEdition"
+
+                <?php
+
+                    if(isset($_GET['id'])) {
+                        $val = $_GET['b_edition'];
+                        echo "value='{$val}' disabled";
+                    }
+
+                ?>
+
+                >
             </div>
         </div>
         <div class="tblRow">
@@ -65,20 +99,48 @@
                 <label for="Quantity">Quantity</label>
             </div>
             <div class="col-75">
-                <input type="text" id="txtQuantity" name="txtQuantity">
+                <input type="text" id="txtQuantity" name="txtQuantity"
+
+                    <?php
+
+                    if(isset($_GET['id'])) {
+                        $val = $_GET['b_quantity'];
+                        echo "value='{$val}' disabled";
+                    }
+
+                ?>
+
+                >
             </div>
 
         </div>
 
         <div class="submit">
-            <button class="btnSubmit">Submit</button>
-            <button class="btnGenQr">Gen_QR</button>
+            <button class="btnSubmit" name="btnSubmit" type="submit">Submit</button>
+            <button class="btnGenQr" 
+            
+            <?php 
+
+                if(!isset($_GET['id'])) {
+                    echo 'class="ClsDisabled" disabled';
+                } else {
+                    if($_GET['id'] == 1) {
+                        echo "enabled";
+                    } else {
+                        echo 'class="ClsDisabled" disabled';
+                    }
+                }
+
+            ?> 
+
+            name="btnGenerate" >Gen_QR</button>
         </div>
 
         <div class="recommandation">
             <button class="btnSetRecommandation">Set Recommandation</button>
         </div>
     </form>
+    <!-- Form Ends Here -->
 </div>
 
-<!-- </html> -->
+<!-- </html>
