@@ -29,7 +29,19 @@
     <head>
         <link rel="stylesheet" href="../css/setRecommandation.css">
     </head>
-<form method="post">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <!-- hidden field -->
+    <input type="text" name="grp_id" value="<?php echo $_GET['grp_id']; ?>" hidden>
+    <?php 
+
+        if(isset($_GET['getSub'])) {
+            if(isset($_POST['btnSubmit'])) {
+                echo "Btn Submit Pressed!";
+            }
+        }
+
+     ?>
+
     <div class="search">
         <!-- first select option starts from here -->
         <select name="dept" id="optDept" style="border-style: solid;">
@@ -71,12 +83,14 @@
             <?php 
                 // if btnGo is pressed once...
                 if(isset($_POST['btnGo'])) {
+
                     // get the department name from post object...
                     $dept_name = $_POST['dept'];
                     // query to dynamically insert the semester for selected department name...
                         $query_fetch_sem = "SELECT semester FROM tbl_dept_subjects WHERE dept_name='{$dept_name}' GROUP BY semester ORDER BY semester";
                     // fetching query result and using that...
                         $fetch_result = mysqli_query($conn,$query_fetch_sem) or die("Semester fetch query Unsuccessful!");
+
 
                     // if btnGo is pressed twice then it must contain 'sem' key ...
                     if(isset($_POST['sem'])) {
@@ -113,6 +127,8 @@
     <div class="tblReturnReport" style="overflow-x:auto;">
         <table name="table">
             <?php 
+
+                $table_generated = false;
                 // if the semester and department keys are there...
                 if(isset($_POST['sem']) && isset($_POST['dept'])) { // set the table...
 
@@ -137,17 +153,25 @@
                         while($row = mysqli_fetch_assoc($fetch_result)) {
                             echo "<tr>";
                             echo "<td>";
-                            // may be not necessary...
-                            /*echo '<label class="switch">';
-                            echo '<input type="checkbox" name="chkSubject">';
-                            echo '<span class="slider round"></span>';
-                            echo "</label>";*/
-                            echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
+
+                            // ask for help
+                            // // based on this page is being reirected, the data/buttons will be shown...
+                            // if(isset($_GET['getSub'])) {
+                            //     echo '<label class="switch">';
+                            //     echo '<input type="checkbox" name="subject[]" value="'.$row['sub_code'].'">';
+                            //     echo '<span class="slider round"></span>';
+                            //     echo "</label>";    
+                            // } else {
+                               
+                            // }
+                             echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
+
                             echo "</td>";
                             echo "<td>".$row['sub_code']."</td>";
                             echo "<td>".$row['sub_name']."</td>";
                             echo "</tr>";
                         }
+                        $table_generated = true;
                     }
 
                 } else { // otherwise print message..
@@ -160,10 +184,16 @@
         <!-- subject table ends over here -->
         <!-- ==================================================================================================== -->
     </div>
-    <!-- may be not necessary -->
-    <!-- <div class="submit">
-        <button class="btnSubmit">Submit</button>
-    </div> -->
+    <!-- Ask for help -->
+    <!-- <?php 
+
+        // if(isset($_GET['getSub']) && $table_generated) {
+        //     echo '<div class="submit">
+        //             <button class="btnSubmit" name="btnSubmit">Submit</button>
+        //         </div>';
+        // }
+
+    ?> -->
 </form>
 <!-- 
 </body>

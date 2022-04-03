@@ -56,7 +56,7 @@ if(isset($_POST['btnGenerate'])) {
 	$actual_b_id = $b_id['b_id'];
 
 	# return to the actual page...
-	header("location: $hostname/admin/html/add_book.php?id=1&b_quantity={$b_quantity}&b_name=$b_name&b_id={$actual_b_id}&b_author={$b_author}&b_edition={$b_edition}");
+	header("location: $hostname/admin/html/add_book.php?id=1&b_quantity={$b_quantity}&b_name=$b_name&b_id={$actual_b_id}&b_author={$b_author}&b_edition={$b_edition}&grp_id={$g_id['max(grp_id)']}");
 
 }
 

@@ -1,5 +1,7 @@
 <!-- Header is included over here -->
-<?php include "header.php"; ?>
+<?php include "header.php";
+      include "config.php"
+ ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 
@@ -108,7 +110,7 @@
                         echo "value='{$val}' disabled";
                     }
 
-                ?>
+                    ?>
 
                 >
             </div>
@@ -120,7 +122,7 @@
             <button class="btnGenQr" 
             
             <?php 
-
+                // enabling or disbling the button...
                 if(!isset($_GET['id'])) {
                     echo 'class="ClsDisabled" disabled';
                 } else {
@@ -135,11 +137,35 @@
 
             name="btnGenerate" >Gen_QR</button>
         </div>
-
-        <div class="recommandation">
-            <button class="btnSetRecommandation">Set Recommandation</button>
-        </div>
     </form>
+
+    // ask for help...
+    <!-- <div class="recommandation">
+            <button class="btnSetRecommandation" 
+
+            <?php 
+                // enabling or disbling the button...
+                if(!isset($_GET['id'])) {
+                    echo 'class="ClsDisabled" disabled';
+                } else {
+                    if($_GET['id'] == 1) {
+                        echo "enabled";
+                    } else {
+                        echo 'class="ClsDisabled" disabled';
+                    }
+                }
+
+            ?> 
+
+             onclick="window.location='<?php 
+
+                if($_GET['id']==1) {
+                    echo "$hostname/admin/html/setRecommandation.php?getSub=1&grp_id={$_GET['grp_id']}"; 
+                }
+
+            ?>'">
+            Set Recommandation</button>
+        </div> -->
     <!-- Form Ends Here -->
 </div>
 

@@ -37,9 +37,13 @@
             include 'config.php';
 
             // getting information from URL bar...
-            $dept_name = $_GET['dept'];
-            $sem_no = $_GET['sem'];
-            $sub_code = $_GET['sub'];
+            if(isset($_GET['dept']) && isset($_GET['sem'])  && isset($_GET['sub'])) {
+                $dept_name = $_GET['dept'];
+                $sem_no = $_GET['sem'];
+                $sub_code = $_GET['sub'];
+            } else {
+                die("<h2 style='text-align: center; font-family: consolas; color: red;'>Unexpected Access!</h2>");
+            }
 
             $query_fetch_sub_name = "SELECT sub_name FROM tbl_dept_subjects WHERE sub_code='{$sub_code}'";
             $fetch_result = mysqli_query($conn,$query_fetch_sub_name);
