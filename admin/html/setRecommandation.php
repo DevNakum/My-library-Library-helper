@@ -31,10 +31,12 @@
     </head>
 <form method="post">
     <div class="search">
+        <!-- first select option starts from here -->
         <select name="dept" id="optDept" style="border-style: solid;">
 
             <option class="optDept" value="select" name="select">---Select---</option>
             
+            <!-- initially, fetching the departments -->
             <?php 
                 // including configuration file, estlabishing connection with database...
                 include 'config.php';
@@ -57,8 +59,12 @@
                 }
 
             ?>
+            <!-- fetching departments over here -->
 
         </select>
+        <!-- first select option ends here -->
+
+        <!-- second selet starts from here -->
         <select name="sem" id="optSem" style="border-style: solid;">
             <option class="optSem" value="select" name="select">---Select---</option>
             
@@ -98,8 +104,12 @@
                 }
             ?>
         </select>
+        <!-- second select ends here -->
+        
         <button class="btnDownload" name="btnGo">Go</button>
     </div>
+    <!-- ==================================================================================================== -->
+    <!-- subject table will be generated over here -->
     <div class="tblReturnReport" style="overflow-x:auto;">
         <table name="table">
             <?php 
@@ -110,7 +120,7 @@
                     if($_POST['sem']!='select') { // then make table header...
                         echo "<tr><th>Recommed?</th><th>Subject Code</th><th>Subject Name</th></tr>";    
                     } else { // otherwise print message...
-                        echo "<h2 style='text-align: center;'>Please Select Semester!</h2>";
+                        echo "<h2 style='text-align: center;'>Now, Please Select Semester and press Go to proceed!</h2>";
                     }
                     
                     // get the name of the department
@@ -132,7 +142,7 @@
                             echo '<input type="checkbox" name="chkSubject">';
                             echo '<span class="slider round"></span>';
                             echo "</label>";*/
-                            echo '<a href="">Recommend</a>';
+                            echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
                             echo "</td>";
                             echo "<td>".$row['sub_code']."</td>";
                             echo "<td>".$row['sub_name']."</td>";
@@ -141,12 +151,14 @@
                     }
 
                 } else { // otherwise print message..
-                    echo "<h2 style='text-align: center;'>Please Select Department and Semester!</h2>";
+                    echo "<h2 style='text-align: center;'>Please Select Department and press Go!</h2>";
                 }
 
             ?>
 
         </table>
+        <!-- subject table ends over here -->
+        <!-- ==================================================================================================== -->
     </div>
     <!-- may be not necessary -->
     <!-- <div class="submit">
