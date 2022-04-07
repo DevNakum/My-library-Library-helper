@@ -5,6 +5,7 @@ include 'config.php';
 
 if(isset($_POST['btnGenerate'])) {
 
+	// print_r($_POST);
 	$query4 = "SELECT max(book_id)'b_id',max(grp_id)'g_id' FROM tbl_book_copies";
 	$result4 = mysqli_query($conn,$query4) or die("Insert Query4 Unsuccessfull!");
 	$b_id = mysqli_fetch_assoc($result4);
@@ -26,7 +27,8 @@ if(isset($_POST['btnGenerate'])) {
 } else {
 
 	# data fetched from post request.... =======================================================================
-	print_r($_POST);
+	// print_r($_POST);
+	echo "<h3 style='text-align: center;' >Now you can click on Set Recommendation to recommend this book and then generate QR codes!</h3>";
 	$b_name = $_POST['txtBookName'];
 	$b_author = $_POST['txtBookAuthor'];
 	$b_edition = $_POST['txtBookEdition'];
@@ -56,7 +58,13 @@ if(isset($_POST['btnGenerate'])) {
 	$actual_b_id = $b_id['b_id'];
 
 	# return to the actual page...
-	header("location: $hostname/admin/html/add_book.php?id=1&b_quantity={$b_quantity}&b_name=$b_name&b_id={$actual_b_id}&b_author={$b_author}&b_edition={$b_edition}&grp_id={$g_id['max(grp_id)']}");
+	// header("location: $hostname/admin/html/add_book.php?id=1&b_quantity={$b_quantity}&b_name=$b_name&b_id={$actual_b_id}&b_author={$b_author}&b_edition={$b_edition}&grp_id={$g_id['max(grp_id)']}");
+
+	echo '<input type="hidden" name="book_name" value="'. $b_name. '">';
+	echo '<input type="hidden" name="book_author" value="'. $b_author. '">';
+	echo '<input type="hidden" name="book_edition" value="'. $b_edition. '">';
+	echo '<input type="hidden" name="book_quantity" value="'. $b_quantity. '">';
+	echo '<input type="hidden" name="id" value="1">';
 
 }
 

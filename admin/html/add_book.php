@@ -1,5 +1,5 @@
 <!-- Header is included over here -->
-<?php include "header.php";
+<?php include_once "header.php";
       include "config.php"
  ?>
 <!-- <!DOCTYPE html>
@@ -37,7 +37,28 @@
 
 <div class="container">
     <!-- The Form is included over here -->
-    <form action="save_data_add_book.php" method="post">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+        <?php  
+
+            if(isset($_POST['btnRecommandation'])) {
+                // print_r($_POST);
+                $query_fetch_grp_id="SELECT grp_id FROM tbl_books WHERE book_name='{$_POST['book_name']}' AND book_edition={$_POST['book_edition']} AND book_author='{$_POST['book_author']}' AND book_quantity={$_POST['book_quantity']}";
+
+                $fetch_result = mysqli_query($conn,$query_fetch_grp_id) or die("Group ID fetching faild!");
+                if(mysqli_num_rows($fetch_result) > 0) {
+                    $grp_id = mysqli_fetch_assoc($fetch_result)['grp_id'];
+                }
+
+                // echo "grp_id : $grp_id";
+                header("Location: $hostname/admin/html/setRecommandation.php?id={$grp_id}");
+            }
+            else if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
+                include 'save_data_add_book.php';
+            }
+            
+
+        ?>
         <div class="tblRow">
             <div class="col-25">
                 <label for="bookName">Book Name</label>
@@ -47,8 +68,8 @@
 
                 <?php
 
-                    if(isset($_GET['id'])) {
-                        $val = $_GET['b_name'];
+                    if(isset($_POST['txtBookName'])) {
+                        $val = $_POST['txtBookName'];
                         echo "value='{$val}' disabled";
                     }
 
@@ -67,8 +88,8 @@
 
                 <?php
 
-                    if(isset($_GET['id'])) {
-                        $val = $_GET['b_author'];
+                    if(isset($_POST['txtBookAuthor'])) {
+                        $val = $_POST['txtBookAuthor'];
                         echo "value='{$val}' disabled";
                     }
 
@@ -86,8 +107,8 @@
 
                 <?php
 
-                    if(isset($_GET['id'])) {
-                        $val = $_GET['b_edition'];
+                    if(isset($_POST['txtBookEdition'])) {
+                        $val = $_POST['txtBookEdition'];
                         echo "value='{$val}' disabled";
                     }
 
@@ -105,8 +126,8 @@
 
                     <?php
 
-                    if(isset($_GET['id'])) {
-                        $val = $_GET['b_quantity'];
+                    if(isset($_POST['txtQuantity'])) {
+                        $val = $_POST['txtQuantity'];
                         echo "value='{$val}' disabled";
                     }
 
@@ -118,15 +139,15 @@
         </div>
 
         <div class="submit">
-            <button class="btnSubmit" name="btnSubmit" type="submit">Submit</button>
+            <button class="btnSubmit" name="btnSubmit" type="submit" value="1">Submit</button>
             <button class="btnGenQr" 
             
             <?php 
                 // enabling or disbling the button...
-                if(!isset($_GET['id'])) {
+                if(!isset($_POST['btnSubmit'])) {
                     echo 'class="ClsDisabled" disabled';
                 } else {
-                    if($_GET['id'] == 1) {
+                    if($_POST['btnSubmit'] == 1) {
                         echo "enabled";
                     } else {
                         echo 'class="ClsDisabled" disabled';
@@ -137,18 +158,16 @@
 
             name="btnGenerate" >Gen_QR</button>
         </div>
-    </form>
 
-    // ask for help...
-    <!-- <div class="recommandation">
-            <button class="btnSetRecommandation" 
+        <div class="recommandation">
+            <button class="btnSetRecommandation" name="btnRecommandation"
 
             <?php 
                 // enabling or disbling the button...
-                if(!isset($_GET['id'])) {
+                if(!isset($_POST['btnSubmit'])) {
                     echo 'class="ClsDisabled" disabled';
                 } else {
-                    if($_GET['id'] == 1) {
+                    if($_POST['btnSubmit'] == 1) {
                         echo "enabled";
                     } else {
                         echo 'class="ClsDisabled" disabled';
@@ -156,16 +175,11 @@
                 }
 
             ?> 
-
-             onclick="window.location='<?php 
-
-                if($_GET['id']==1) {
-                    echo "$hostname/admin/html/setRecommandation.php?getSub=1&grp_id={$_GET['grp_id']}"; 
-                }
-
-            ?>'">
+            >
             Set Recommandation</button>
-        </div> -->
+        </div>
+
+    </form>
     <!-- Form Ends Here -->
 </div>
 
