@@ -8,7 +8,7 @@
 	echo "</pre>";
 
 	if(sizeof($_POST['subjects']) == 0) {
-		header();
+		// header();
 	}
 	
 

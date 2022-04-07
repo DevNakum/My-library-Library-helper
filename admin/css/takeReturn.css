@@ -186,14 +186,14 @@ input:checked+.slider:before {
     font-size: 25px;
 }
 
-.submit {
+/* .submit {
     margin-top: 7%;
-}
+} */
 
 .btnSubmit {
-    margin-left: 48%;
-    font-size: 20px;
-    padding: 10px 10px 10px 10px;
+    /* margin-left: 48%; */
+    font-size: 13px;
+    padding: 7px 10px 7px 10px;
     border-radius: 10px;
     color: white;
     background-color: #0082e6;
@@ -274,8 +274,8 @@ input:checked+.slider:before {
 
     .btnSubmit {
         margin-left: 46%;
-        font-size: 20px;
-        padding: 10px 10px 10px 10px;
+        font-size: 13px;
+        padding: 7px 10px 7px 10px;
         border-radius: 10px;
         color: white;
         background-color: #0082e6;
@@ -508,7 +508,7 @@ input:checked+.slider:before {
 
     .btnSubmit {
         margin-left: 38%;
-        font-size: 15px;
+        font-size: 13px;
         padding: 10px 10px 10px 10px;
         border-radius: 10px;
         color: white;

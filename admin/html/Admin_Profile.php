@@ -40,7 +40,7 @@
         <button onclick="location.href='add_book.php'" class="btnAddBook">Add Book</button>
       </div>
       <div>
-        <button onclick="location.href='takeReturn.php'" class="btnTakeReturn">Take Return</button>
+        <button onclick="location.href='takeReturn.php?check=2'" class="btnTakeReturn">Take Return</button>
       </div>
       <div>
         <button onclick="location.href='setRecommandation.php'" class="btnSetRecommandation">Set Recommandation</button>
