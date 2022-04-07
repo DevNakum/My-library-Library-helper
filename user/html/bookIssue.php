@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include 'header.php' ?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,7 +25,7 @@
       <li><a herf="#">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
-  </nav>
+  </nav> -->
 
   <?php
   include 'config.php';

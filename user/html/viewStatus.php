@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include 'header.php' ?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +23,11 @@
           <li><a herf="#">About us</a></li>
           <li><a herf="#">Contact us</a></li>
       </ul>
-  </nav>  
+  </nav>   -->
+  <!-- extra css styling is added here -->
+  <link rel="stylesheet" href="../css/viewStatus.css">
+
+  <!-- actual design is here -->
   <section class="top">
     <span class="name" name="name">Name : </span>
     <span class="id" name="id">ID No. : </span>

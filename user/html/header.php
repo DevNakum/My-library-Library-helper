@@ -18,8 +18,8 @@
         </label>
         <label class="logo">ID No.</label>
         <ul>
-            <li><a herf="#">Home</a></li>
-            <li><a class="active" herf="#">Credit</a></li>
+            <li><a class="active" herf="./Login.php">Home</a></li>
+            <li><a herf="#">Credit</a></li>
             <li><a herf="#">About us</a></li>
             <li><a herf="#">Contact us</a></li>
         </ul>
