@@ -12,12 +12,10 @@
   <header>Library Helper-My Library</header>
   <div class="btnAllBtn">
     <div>
-      <button class="btnLogin" name="btnLogin" onclick="document.getElementById('id01').style.display='block'"
-        style="width:auto;">Login</button>
+      <button class="btnLogin" name="btnLogin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </div>
     <div>
-      <button class="btnAdminLogin" name="btnAdminLogin" onclick="document.getElementById('id02').style.display='block'"
-        style="width:auto;">Admin Login</button>
+      <button class="btnAdminLogin" name="btnAdminLogin" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Admin Login</button>
     </div>
     <div>
       <button class="btnSignUp" name="btnSignUp" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Sign
@@ -28,37 +26,38 @@
 
   <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="/action_page.php" method="post">
+    <form class="modal-content animate" action="login.php" method="post">
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close"
-          title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="..\User-Profile-PNG-High-Quality-Image.png" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">
-        <div class="inputs">
-          <div class="Fields">
-            <div class="Fieldset">
-              <input type="text" name="txtUsername" class="Before-FS" required="" autocomplete="off">
-              <h1 class="Fs-H"><span>Username</span></h1>
-              <label class="placeholder">Username</label>
-            </div>
-          </div>
-          <div class="Fields">
-            <div class="Fieldset">
-              <input type="password" name="txtPassword" class="Before-FS" required="">
-              <h1 class="Fs-H"><span>Password</span></h1>
-              <label class="placeholder">Password</label>
-            </div>
-          </div>
 
-        </div>
-        <button type="submit" onclick="window.location.href = 'userProfile.php'" name="btnLogin">Login</button>
+        <!-- <form action="login.php" method="post"> -->
+          <div class="inputs">
+            <div class="Fields">
+              <div class="Fieldset">
+                <input type="text" name="txtUsername" class="Before-FS" required="" autocomplete="off">
+                <h1 class="Fs-H"><span>Username</span></h1>
+                <label class="placeholder">Username</label>
+              </div>
+            </div>
+            <div class="Fields">
+              <div class="Fieldset">
+                <input type="password" name="txtPassword" class="Before-FS" required="">
+                <h1 class="Fs-H"><span>Password</span></h1>
+                <label class="placeholder">Password</label>
+              </div>
+            </div>
+            <button type="submit" name="btnLogin">Login</button>  <!--onclick="window.location.href = 'userProfile.php'"-->
+          </div>
+        <!-- </form> -->
+        
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-          class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="forgotPassword.php">password?</a></span>
       </div>
     </form>
@@ -68,8 +67,7 @@
 
     <form class="modal-content animate" action="/action_page.php" method="post">
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close"
-          title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="..\User-Profile-PNG-High-Quality-Image.png" alt="Avatar" class="avatar">
       </div>
 
@@ -95,8 +93,7 @@
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id02').style.display='none'"
-          class="cancelbtn" name="btnCancel">Cancel</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn" name="btnCancel">Cancel</button>
       </div>
     </form>
   </div>
@@ -106,8 +103,7 @@
 
     <form class="modal-content animate" action="/action_page.php" method="post">
       <div class="imgcontainer">
-        <span onclick="document.getElementById('id03').style.display='none'" class="close"
-          title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="..\User-Profile-PNG-High-Quality-Image.png" alt="Avatar" class="avatar">
       </div>
 
@@ -147,8 +143,7 @@
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id03').style.display='none'"
-          class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
     </form>
   </div>
@@ -158,7 +153,7 @@
     var modal = document.getElementById('id01');
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
+    window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
@@ -166,7 +161,7 @@
     var modal = document.getElementById('id02');
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
+    window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
@@ -174,11 +169,12 @@
     var modal = document.getElementById('id03');
     var x = document.getElementById('txtSignUp').required;
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
+    window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
+
     function submit() {
       window.location.href = "userProfile.php"
     }
