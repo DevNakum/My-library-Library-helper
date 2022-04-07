@@ -1,4 +1,5 @@
 <?php
+    echo "On login page!";
     if (isset($_POST['btnLogin'])) {
         include 'config.php';
        
@@ -17,6 +18,7 @@
                 $_SESSION["user_name"] = $row['user_name'];
                 $_SESSION["user_id"] = $row['user_id'];
                 $_SESSION["user_role"] = $row['user_role'];
+                // echo "{$hostname}/user/html/userProfile.php";
                 header("Location: {$hostname}/user/html/userProfile.php");
             }
         }
