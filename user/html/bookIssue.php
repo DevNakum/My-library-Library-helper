@@ -26,7 +26,7 @@
       <li><a herf="#">Contact us</a></li>
     </ul>
   </nav> -->
-
+  <link rel="stylesheet" href="../css/bookIssue.css">
   <?php
   include 'config.php';
 

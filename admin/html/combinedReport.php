@@ -105,7 +105,7 @@
             $grp_id = $row['grp_id']; // group id ...
 
             // count the total book id's with given grp_id which are having book status as NO....
-            $query_fetch_issed_copies = 'SELECT count(grp_id)"total_issued" FROM tbl_book_copies WHERE grp_id='. $grp_id .' AND book_status="NO"';
+            $query_fetch_issed_copies = 'SELECT count(grp_id)"total_issued" FROM tbl_book_copies WHERE grp_id='. $grp_id .' AND book_status="YES"';
             $fetch_result_one = mysqli_query($conn,$query_fetch_issed_copies) or die("Total issued copies fetching Unsuccessfull!");
             $total_copies = mysqli_fetch_assoc($fetch_result_one)['total_issued'];
 
