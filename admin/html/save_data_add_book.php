@@ -3,7 +3,7 @@
 # included config file, connection to database...
 include 'config.php';
 
-if(isset($_POST['btnGenerate'])) {
+if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
 
 	// print_r($_POST);
 	$query4 = "SELECT max(book_id)'b_id',max(grp_id)'g_id' FROM tbl_book_copies";

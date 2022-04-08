@@ -1,4 +1,5 @@
-<?php include_once "header.php"; ?>
+<?php include_once "header.php";
+      include_once 'config.php' ?>
 <!-- <!DOCTYPE html>
 <html>
 
@@ -40,7 +41,19 @@
         } else if(isset($_POST['btnGo']) && $_POST['btnGo'] > 0) { // otherwise the btnGo is having value > 0
             echo '<input type="hidden" name="id">';
         }
-        // print_r($_POST);
+        
+        if(isset($_POST['btnSubmit']) && !isset($_POST['btnGo'])) {
+            // print_r($_POST);
+
+            $grp_id = $_POST['btnSubmit'];
+            foreach ($_POST['subject'] as $key => $sub_code) {
+                $query_insert_recommendation = "INSERT INTO tbl_recommendation VALUES('{$grp_id}','{$sub_code}')";
+                $insert_result = mysqli_query($conn,$query_insert_recommendation) or die("Insert query failed!");
+            }
+
+            include 'save_data_add_book.php';
+
+        }
 
      ?>
 
@@ -201,9 +214,33 @@
     <?php 
 
         if(isset($_POST['id']) && $table_generated) {
-            echo '<div class="submit">
-                    <button class="btnSubmit" name="btnSubmit">Submit</button>
-                </div>';
+
+                if(isset($_GET['id'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_GET['id'].'"
+
+                        >Submit</button>
+                    </div>';
+                } else if(isset($_POST['btnGo'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_POST['btnGo'].'"
+
+                        >Submit</button>
+                    </div>';
+
+                } else if(isset($_POST['btnSubmit'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_POST['btnSubmit'].'"
+
+                        >Submit</button>
+                    </div>';
+                }
         }
 
     ?>

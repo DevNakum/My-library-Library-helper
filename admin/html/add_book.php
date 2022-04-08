@@ -53,8 +53,9 @@
                 // echo "grp_id : $grp_id";
                 header("Location: $hostname/admin/html/setRecommandation.php?id={$grp_id}");
             }
-            else if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
+            else if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit_add'])) {
                 include 'save_data_add_book.php';
+                // print_r($_POST);
             }
             
 
@@ -139,15 +140,15 @@
         </div>
 
         <div class="submit">
-            <button class="btnSubmit" name="btnSubmit" type="submit" value="1">Submit</button>
+            <button class="btnSubmit" name="btnSubmit_add" type="submit" value="1">Submit</button>
             <button class="btnGenQr" 
             
             <?php 
                 // enabling or disbling the button...
-                if(!isset($_POST['btnSubmit'])) {
+                if(!isset($_POST['btnSubmit_add'])) {
                     echo 'class="ClsDisabled" disabled';
                 } else {
-                    if($_POST['btnSubmit'] == 1) {
+                    if($_POST['btnSubmit_add'] == 1) {
                         echo "enabled";
                     } else {
                         echo 'class="ClsDisabled" disabled';
@@ -164,10 +165,10 @@
 
             <?php 
                 // enabling or disbling the button...
-                if(!isset($_POST['btnSubmit'])) {
+                if(!isset($_POST['btnSubmit_add'])) {
                     echo 'class="ClsDisabled" disabled';
                 } else {
-                    if($_POST['btnSubmit'] == 1) {
+                    if($_POST['btnSubmit_add'] == 1) {
                         echo "enabled";
                     } else {
                         echo 'class="ClsDisabled" disabled';
