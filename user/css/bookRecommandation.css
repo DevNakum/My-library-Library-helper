@@ -146,7 +146,7 @@ a:hover {
 }
 
 #optSem {
-  margin-left: 48%;
+  margin-left: 60%;
   padding: 17px 35px 17px 37px;
   font-size: 20px;
   background-color: #0082e6;
@@ -621,7 +621,8 @@ table {
 }
 
 .tblReturnReport {
-  margin-top: 7%;
+  margin-top: 0%; /* Changed Here  */
+  margin-bottom: 5%; /* Added Here */
 }
 
 th,

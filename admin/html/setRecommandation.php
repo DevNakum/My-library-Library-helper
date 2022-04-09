@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+<?php include_once "header.php";
+      include_once 'config.php' ?>
 <!-- <!DOCTYPE html>
 <html>
 
@@ -31,13 +32,27 @@
     </head>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <!-- hidden field -->
-    <input type="text" name="grp_id" value="<?php echo $_GET['grp_id']; ?>" hidden>
+    <!-- <input type="text" name="grp_id" value="<?php echo $_GET['grp_id']; ?>" hidden> -->
     <?php 
 
-        if(isset($_GET['getSub'])) {
-            if(isset($_POST['btnSubmit'])) {
-                echo "Btn Submit Pressed!";
+        // if get request is containing id key
+        if(isset($_GET['id'])) {
+            echo "<input type='hidden' name='id'>";
+        } else if(isset($_POST['btnGo']) && $_POST['btnGo'] > 0) { // otherwise the btnGo is having value > 0
+            echo '<input type="hidden" name="id">';
+        }
+        
+        if(isset($_POST['btnSubmit']) && !isset($_POST['btnGo'])) {
+            // print_r($_POST);
+
+            $grp_id = $_POST['btnSubmit'];
+            foreach ($_POST['subject'] as $key => $sub_code) {
+                $query_insert_recommendation = "INSERT INTO tbl_recommendation VALUES('{$grp_id}','{$sub_code}')";
+                $insert_result = mysqli_query($conn,$query_insert_recommendation) or die("Insert query failed!");
             }
+
+            include 'save_data_add_book.php';
+
         }
 
      ?>
@@ -120,7 +135,19 @@
         </select>
         <!-- second select ends here -->
         
-        <button class="btnDownload" name="btnGo">Go</button>
+        <button class="btnDownload" name="btnGo" value="
+
+            <?php 
+
+                if(isset($_GET['id'])) {
+                    echo $_GET['id'];
+                } else if(isset($_POST['btnGo'])) {
+                    echo $_POST['btnGo'];
+                }
+
+             ?>
+
+        ">Go</button>
     </div>
     <!-- ==================================================================================================== -->
     <!-- subject table will be generated over here -->
@@ -155,16 +182,15 @@
                             echo "<td>";
 
                             // ask for help
-                            // // based on this page is being reirected, the data/buttons will be shown...
-                            // if(isset($_GET['getSub'])) {
-                            //     echo '<label class="switch">';
-                            //     echo '<input type="checkbox" name="subject[]" value="'.$row['sub_code'].'">';
-                            //     echo '<span class="slider round"></span>';
-                            //     echo "</label>";    
-                            // } else {
-                               
-                            // }
-                             echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
+                            // based on this page is being reirected, the data/buttons will be shown...
+                            if(isset($_POST['id'])) {
+                                echo '<label class="switch">';
+                                echo '<input type="checkbox" name="subject[]" value="'.$row['sub_code'].'">';
+                                echo '<span class="slider round"></span>';
+                                echo "</label>";    
+                            } else {
+                                echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';  
+                            }
 
                             echo "</td>";
                             echo "<td>".$row['sub_code']."</td>";
@@ -185,15 +211,39 @@
         <!-- ==================================================================================================== -->
     </div>
     <!-- Ask for help -->
-    <!-- <?php 
+    <?php 
 
-        // if(isset($_GET['getSub']) && $table_generated) {
-        //     echo '<div class="submit">
-        //             <button class="btnSubmit" name="btnSubmit">Submit</button>
-        //         </div>';
-        // }
+        if(isset($_POST['id']) && $table_generated) {
 
-    ?> -->
+                if(isset($_GET['id'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_GET['id'].'"
+
+                        >Submit</button>
+                    </div>';
+                } else if(isset($_POST['btnGo'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_POST['btnGo'].'"
+
+                        >Submit</button>
+                    </div>';
+
+                } else if(isset($_POST['btnSubmit'])) {
+                    echo '<div class="submit">
+                        <button class="btnSubmit" name="btnSubmit"
+
+                            value="'.$_POST['btnSubmit'].'"
+
+                        >Submit</button>
+                    </div>';
+                }
+        }
+
+    ?>
 </form>
 <!-- 
 </body>

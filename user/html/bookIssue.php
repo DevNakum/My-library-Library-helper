@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include 'header.php' ?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,8 +25,8 @@
       <li><a herf="#">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
-  </nav>
-
+  </nav> -->
+  <link rel="stylesheet" href="../css/bookIssue.css">
   <?php
   include 'config.php';
 
