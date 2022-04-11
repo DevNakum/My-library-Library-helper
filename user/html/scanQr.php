@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if($_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
@@ -15,7 +16,7 @@
   <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 </head>
 
-<body>
+<body class="image">
   <h1 style="text-align: center">
     Qr code reader using JavaScript and HTML5
   </h1>

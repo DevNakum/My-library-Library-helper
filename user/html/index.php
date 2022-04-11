@@ -7,7 +7,7 @@
   <title>Home Page</title>
 </head>
 
-<body>
+<body class="image">
 
   <header>Library Helper-My Library</header>
   <div class="btnAllBtn">

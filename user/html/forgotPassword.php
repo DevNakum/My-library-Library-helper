@@ -6,7 +6,7 @@
   <title>Forgot Password</title>
   <link rel="stylesheet" href="../css/forgotPassword.css">
 </head>
-<body>
+<body class="image">
   <header>Library Helper-My Library</header>
       <div class="maindiv">
         <h3>Forgot Password</h3>

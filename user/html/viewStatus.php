@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/viewStatus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-<body>
+<body class="image">
     <header>Library Helper - My Library</header>
   <nav>
     <input type="checkbox" id="check">

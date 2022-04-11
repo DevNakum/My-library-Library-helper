@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
-<body>
+<body class="image">
     <header>Library Helper - My Library</header>
     <nav>
         <input type="checkbox" id="check">
@@ -21,9 +21,9 @@
         <ul>
             <li><a href="Admin_Profile.php">Home</a></li>
             <li><a href="combinedReport.php">Combine Report</a></li>
-            <li><a class="active" href="#">Credit</a></li>
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Contact us</a></li>
+            <li><a class="active" href="#">Log out</a></li>
         </ul>
     </nav>
 </body>

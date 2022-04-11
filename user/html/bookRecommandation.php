@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/bookRecommandation.css">
 </head>
 
-<body>
+<body class="image">
     <header>
         Library Helper - My Library
     </header>
