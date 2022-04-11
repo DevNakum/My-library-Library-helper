@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION["user_role"]=='0')
+  {
+    header("Location: {$hostname}/user/html/");
+  }
+?>
 <html lang="en">
   <head>
     <style type="text/css">

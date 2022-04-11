@@ -1,5 +1,10 @@
-<?php include "header.php"; 
-      include_once "config.php";
+<?php
+  include "header.php"; 
+  include_once "config.php";
+  if($_SESSION["user_role"]=='0')
+  {
+      header("Location: {$hostname}/user/html/");
+  }
 ?>
 <!-- <!DOCTYPE html>
 <html>

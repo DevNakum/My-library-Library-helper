@@ -1,5 +1,11 @@
-<?php include 'header.php' ?>
-<!-- <!DOCTYPE html>
+<?php
+  if($_SESSION["user_role"]=='1')
+  {
+    header("Location: {$hostname}/user/html/");
+  }
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,15 +24,16 @@
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo">ID No.</label>
+    
+    <label class="logo"><?php session_start();echo $_SESSION["user_id"];?> </label>
     <ul>
       <li><a herf="#">Home</a></li>
       <li><a class="active" herf="#">Credit</a></li>
       <li><a herf="#">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
-  </nav> -->
-  <link rel="stylesheet" href="../css/bookIssue.css">
+  </nav>
+  
   <?php
   include 'config.php';
 

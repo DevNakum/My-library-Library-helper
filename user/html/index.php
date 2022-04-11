@@ -15,9 +15,6 @@
       <button class="btnLogin" name="btnLogin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     </div>
     <div>
-      <button class="btnAdminLogin" name="btnAdminLogin" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Admin Login</button>
-    </div>
-    <div>
       <button class="btnSignUp" name="btnSignUp" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Sign
         Up</button>
     </div>
@@ -63,7 +60,7 @@
     </form>
   </div>
 
-  <div id="id02" class="modal">
+  <!-- <div id="id02" class="modal">
 
     <form class="modal-content animate" action="/action_page.php" method="post">
       <div class="imgcontainer">
@@ -96,12 +93,12 @@
         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn" name="btnCancel">Cancel</button>
       </div>
     </form>
-  </div>
+  </div> -->
 
 
   <div id="id03" class="modal">
 
-    <form class="modal-content animate" action="/action_page.php" method="post">
+    <form class="modal-content animate" action="signUp.php" method="post">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="..\User-Profile-PNG-High-Quality-Image.png" alt="Avatar" class="avatar">
@@ -118,9 +115,9 @@
           </div>
           <div class="Fields">
             <div class="Fieldset">
-              <input type="text" name="txtUsernamr" class="Before-FS" required="" autocomplete="off">
-              <h1 class="Fs-H"><span>Username</span></h1>
-              <label class="placeholder">Username</label>
+              <input type="text" name="txtUsername" class="Before-FS" required="" autocomplete="off">
+              <h1 class="Fs-H"><span>Id</span></h1>
+              <label class="placeholder">Id</label>
             </div>
           </div>
           <div class="Fields">

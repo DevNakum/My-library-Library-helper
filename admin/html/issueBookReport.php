@@ -1,4 +1,10 @@
-<?php include "header.php"; ?>
+<?php include "header.php";
+  // session_start();
+  if($_SESSION["user_role"]=='0')
+  {
+      header("Location: {$hostname}/user/html/");
+  }
+?>
 <!-- <!DOCTYPE html>
 <html>
 
@@ -40,7 +46,18 @@
 </div>
 
 
+<?php
+  include 'config.php';
+  $date = $_GET['date'];
+ 
+  $sql1 = "select tib.book_id,tb.grp_id,tb.book_name,tb.book_edition,tb.book_author,tib.user_id,tib.issued_date from tbl_book_copies tbc join tbl_books tb on tb.grp_id = tbc.grp_id join tbl_issued_books tib where tbc.book_id = tib.book_id and tib.issued_date = '{$date}'";
+  // echo $sql;
+  // die();
 
+  $result = mysqli_query($conn,$sql1) or die("query1 failed");
+  if(mysqli_num_rows($result)){
+
+?>
 <div class="tblReturnReport" style="overflow-x:auto;">
   <table>
     <tr>
@@ -50,16 +67,25 @@
       <th>Edition</th>
       <th>Author</th>
     </tr>
+    <?php
+      while($row = mysqli_fetch_assoc($result))  {
+    ?>
     <tr>
-      <td name="issueDate">13-03-2021</td>
-      <td name="issuedBy">20CE056</td>
-      <td name="bookName">BALAGURU SWAMI</td>
-      <td name="bookEdition">2nd</td>
-      <td name="bookAuthor">BALAGURU</td>
+      <td name="issueDate"><?php echo $row['issued_date'];?></td>
+      <td name="issuedBy"><?php echo $row['user_id'];?></td>
+      <td name="bookName"> <?php echo $row['book_name'];?></td>
+      <td name="bookEdition"><?php echo $row['book_edition'];?></td>
+      <td name="bookAuthor"><?php echo $row['book_author'];?></td>
     </tr>
   </table>
 </div>
-
+<?php
+    }
+  }
+  else{
+    echo "<h1>No book found</h1>";
+  }
+?>
 <!-- </body>
 
 </html> -->

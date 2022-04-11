@@ -1,5 +1,10 @@
 <?php 
 
+if($_SESSION["user_role"]=='1')
+{
+  header("Location: {$hostname}/user/html/");
+}
+
 // this must be included in 'bookRecommendation.php' page...
 $sub_code = $_POST['subject'][0];
 $previous_details = [

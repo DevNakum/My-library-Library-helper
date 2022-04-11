@@ -1,4 +1,9 @@
-<?php include "header.php"; ?>
+<?php include "header.php";
+// session_start();
+if ($_SESSION["user_role"] == '0') {
+  header("Location: {$hostname}/user/html/");
+}
+?>
 <!-- <!DOCTYPE html>
 <html>
 
@@ -26,54 +31,66 @@
             <li><a href="#">Contact us</a></li>
     </ul>
   </nav> -->
-  <head>
-    <link rel="stylesheet" href="../css/bookReturnReport.css">
-  </head>
-  <div class="search">
-    <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
-    <button type="submit" class="btnSearch"name="btnSearch">Search</button>
-    <button class="btnDownload" name="btnDownload">Download</button>
-  </div>
+
+<head>
+  <link rel="stylesheet" href="../css/bookReturnReport.css">
+</head>
+<div class="search">
+  <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
+  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
+  <button class="btnDownload" name="btnDownload">Download</button>
+</div>
 
 
+<?php
+  include 'config.php';
+  $date = $_GET['date'];
 
-  <div class="tblReturnReport" style="overflow-x:auto;">
-    <table>
-      <tr>
-        <th>Returned By</th>
-        <th>Book Name</th>
-        <th>Edition</th>
-        <th>Author</th>
-        <th>Taken By</th>
-        <th>Return Date</th>
-      </tr>
-      <tr>
-        <td>20CE056</td>
-        <td>BALAGURU SWAMI</td>
-        <td>2nd</td>
-        <td>BALAGURU</td>
-        <td>Admin</td>
-        <td>13-03-2021</td>
-      </tr>
-      <tr>
-        <td>20CE059</td>
-        <td>BALAGURU SWAMI</td>
-        <td>2nd</td>
-        <td>BALAGURU</td>
-        <td>Admin</td>
-        <td>13-03-2022</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
+  $sql1 = "select trb.admin_id,trb.book_id,tb.grp_id,tb.book_name,tb.book_edition,tb.book_author,trb.user_id,trb.return_date from tbl_book_copies tbc join tbl_books tb on tb.grp_id = tbc.grp_id join tbl_return_book trb where tbc.book_id = trb.book_id and trb.return_date = '{$date}'";
+  // echo $sql1;
+  // die();
 
+  $result = mysqli_query($conn,$sql1) or die("query1 failed");
+  if(mysqli_num_rows($result)){
+?>
+<div class="tblReturnReport" style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Returned By</th>
+      <th>Book Name</th>
+      <th>Edition</th>
+      <th>Author</th>
+      <th>Taken By</th>
+      <th>Return Date</th>
+    </tr>
+    <?php
+      while($row = mysqli_fetch_assoc($result))  {
+    ?>
+    <tr>
+      <td><?php echo $row['user_id'];?></td>
+      <td><?php echo $row['book_name'];?></td>
+      <td><?php echo $row['book_edition'];?></td>
+      <td><?php echo $row['book_author'];?></td>
+      <td><?php echo $row['admin_id'];?></td>
+      <td><?php echo $row['return_date'];?></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+<?php
+    }
+  }
+  else{
+    echo "<h1>No book found</h1>";
+  }
+?>
 <!-- </body>
 
 </html> -->

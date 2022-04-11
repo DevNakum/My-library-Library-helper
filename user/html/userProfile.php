@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION["user_role"]=='1')
+  {
+    header("Location: {$hostname}/user/html/");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +27,6 @@
     <?php
       include 'config.php';
 
-      session_start();
       $uid = $_SESSION["user_id"];
       
       $sql = "select * from tbl_users where user_id = '{$uid}'";
@@ -35,7 +41,9 @@
       <li><a herf="#">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
-  </nav>
+  </nav> 
+
+  <!-- <?php include 'header.php';?> -->
   <div class="btn">
     <div>
       <button class="btnBookIssue" onclick="window.location.href = 'scanQr.php'">Book Issue</button>
@@ -47,6 +55,6 @@
       <button class="btnBookRecommandation" onclick="window.location.href = 'bookRecommandation.php'">Book Recommandation</button>
     </div>
   </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

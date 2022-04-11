@@ -2,6 +2,10 @@
 	
 	include 'config.php';
 
+	if($_SESSION["user_role"]=='0')
+    {
+        header("Location: {$hostname}/user/html/");
+    }
 	// for debugging purposes...
 	// echo "<pre>";
 	// print_r($_POST);

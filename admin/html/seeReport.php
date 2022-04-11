@@ -1,4 +1,9 @@
-<?php include "header.php"; ?>
+<?php include "header.php"; 
+    if($_SESSION["user_role"]=='0')
+    {
+        header("Location: {$hostname}/user/html/");
+    }
+?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +39,33 @@
     <head>
         <link rel="stylesheet" href="../css/see report.css">
     </head>
+    
     <div class="contain">
-        <div class="tooltip">
-            <input type="date" id="datepicker" name="date">
-        </div>
 
+        <form action="takeDate.php" method="post">
+            <div class="tooltip">
+                <input type="date" id="datepicker" name="date">  
+            </div>
+        
         <div class="tooltip">
-            <button class="btnBookIssueReport" onclick="location.href='issueBookReport.php'">Book Issued Report </button>
+            <button class="btnBookIssueReport" name="btnBookIssueReport" onclick="location.href='issueBookReport.php'">Book Issued Report </button>
         </div>
 
         <div class="tooltip">
             <button class="btnBookReturnedReport" onclick="location.href='bookReturnReport.php'">Book Returned Report</button>
         </div>
+
+        </form>
+        <?php
+            if(isset($_POST['date']))
+            {
+                $date = $_POST['date']; 
+                echo $date;
+            }
+            
+
+        ?>
+        
     </div>
 
 

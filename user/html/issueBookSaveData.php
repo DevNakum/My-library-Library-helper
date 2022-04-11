@@ -1,6 +1,11 @@
 <?php
     include 'config.php';
 
+    if($_SESSION["user_role"]=='1')
+    {
+        header("Location: {$hostname}/user/html/");
+    }
+    
     $bid = $_GET['bid'];
     // echo $bid;
     session_start();

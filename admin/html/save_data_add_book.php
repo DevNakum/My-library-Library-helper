@@ -2,6 +2,10 @@
 
 # included config file, connection to database...
 include 'config.php';
+if($_SESSION["user_role"]=='0')
+{
+	header("Location: {$hostname}/user/html/");
+}
 
 if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
 

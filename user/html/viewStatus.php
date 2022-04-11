@@ -1,7 +1,12 @@
-<?php include 'header.php';
-      include "config.php";
+<?php 
+    include "config.php";
+    session_start();
+    if($_SESSION["user_role"]=='1')
+    {
+      header("Location: {$hostname}/user/html/");
+    }
  ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,29 +23,29 @@
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-      <label class="logo">ID No.</label>
+      <label class="logo"><?php echo $_SESSION["user_id"];?></label>
       <ul>
           <li><a herf="#">Home</a></li>
           <li><a class="active"herf="#">Credit</a></li>
           <li><a herf="#">About us</a></li>
           <li><a herf="#">Contact us</a></li>
       </ul>
-  </nav>   -->
+  </nav>  
   <!-- extra css styling is added here -->
-  <link rel="stylesheet" href="../css/viewStatus.css">
+  
 
 
   <?php 
 
-  session_start();
-  // print_r($_SESSION); 
+  // session_start();
+  // // print_r($_SESSION); 
 
 
   ?>
   <!-- actual design is here -->
   <section class="top">
-    <span class="name" name="name">Name : <?php echo $_SESSION['user_name']; ?></span>
-    <span class="id" name="id">ID No. : <?php echo $_SESSION['user_id']; ?></span>
+    <!-- <span class="name" name="name">Name : <?php echo $_SESSION['user_name']; ?></span> -->
+    <!-- <span class="id" name="id">ID No. : <?php echo $_SESSION['user_id']; ?></span> -->
   </section>
   <div class="tblReturnReport" style="overflow-x:auto;">
     <table name="table">
@@ -64,8 +69,11 @@
       <?php 
 
         // query to fetch all issued books...
-        $query_fetch_issued_book = "SELECT * FROM tbl_issued_books WHERE user_id={$_SESSION['user_id']}";
+        $query_fetch_issued_book = "SELECT * FROM tbl_issued_books WHERE user_id='{$_SESSION['user_id']}'";
+        // echo $query_fetch_issued_book;
+        // die();
         $fetch_result = mysqli_query($conn,$query_fetch_issued_book) or die("Fetching issued book query failed!");
+
 
         if(mysqli_num_rows($fetch_result) > 0) {
           while ($row = mysqli_fetch_assoc($fetch_result)) {
