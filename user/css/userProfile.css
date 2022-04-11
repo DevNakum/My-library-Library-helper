@@ -8,17 +8,25 @@
 body {
   font-family: montserrat;
 }
-header {
-  text-align: center;
-  font-size: 60px;
+.image{
+  background-image: url("janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+  opacity: 1;
+  background-size: 1750px;
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+}
+img{
+  max-width: 100%;
 }
 nav {
-  background: #0082e6;
+  background: rgb(219, 219, 219);
   height: 60px;
   width: 100%;
 }
 label.logo {
-  color: white;
+  color: black;
   font-size: 35px;
   line-height: 55px;
   padding: 0 100px;
@@ -34,7 +42,7 @@ nav ul li {
   margin: 0 5px;
 }
 nav ul li a {
-  color: white;
+  color: black;
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 3px;
@@ -42,13 +50,13 @@ nav ul li a {
 }
 a.active,
 a:hover {
-  background: #1b9bff;
+  background: rgb(158, 143, 143);;
   transition: 0.5s;
   cursor: pointer;
 }
 .checkbtn {
   font-size: 30px;
-  color: white;
+  color: black;
   float: right;
   line-height: 80px;
   margin-right: 40px;
@@ -70,15 +78,21 @@ a:hover {
   z-index: -100;
 }
 .btnBookIssue {
-  background: #0082e6;
+  background-color: rgb(36, 35, 35);
   border-radius: 33px;
   padding: 25px 118px 23px 113px;
+  box-shadow: 7px 7px rgb(219, 219, 219);
+  border: 1px solid;
   color: white;
   font-weight: bold;
   font-size: 25px;
+  cursor: pointer;
 }
 .btnViewStatus {
-  background: #0082e6;
+  background-color: rgb(36, 35, 35);
+  border: 1px solid;
+  box-shadow: 7px 7px rgb(219, 219, 219);
+  cursor: pointer;
   border-radius: 33px;
   margin-top: 40px;
   padding: 25px 117px 23px 108px;
@@ -87,13 +101,34 @@ a:hover {
   font-size: 25px;
 }
 .btnBookRecommandation {
-  background: #0082e6;
-  border-radius: 33px;
+  background-color: rgb(36, 35, 35);
+  border: 1px solid;
+  box-shadow: 7px 7px rgb(219, 219, 219);
+  cursor: pointer;
+    border-radius: 33px;
   margin-top: 40px;
   padding: 25px 48px 23px 40px;
   color: white;
   font-weight: bold;
   font-size: 25px;
+}
+.btnBookIssue:hover{
+  background-color: rgb(255, 250, 250);
+    color:black;
+    border-color: black;
+    border-width: 4px;
+}
+.btnViewStatus:hover{
+  background-color: rgb(255, 250, 250);
+    color:black;
+    border-color: black;
+    border-width: 4px;
+}
+.btnBookRecommandation:hover{
+  background-color: rgb(255, 250, 250);
+    color:black;
+    border-color: black;
+    border-width: 4px;
 }
 @media (max-width: 952px) {
   label.logo {
@@ -112,10 +147,6 @@ a:hover {
   }
 }
 @media (max-width: 858px) {
-  header {
-    text-align: center;
-    font-size: 32px;
-  }
   .btn {
     position: absolute;
     top: 35%;
@@ -123,6 +154,16 @@ a:hover {
     transform: translate(-50%, -50%);
     z-index: -100;
   }
+  .btnBookIssue {
+    margin-top: 54px;
+    top: 14px;
+    background-color: rgb(36, 35, 35);
+    border-radius: 33px;
+    padding: 25px 118px 23px 113px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
   .checkbtn {
     display: block;
   }
@@ -131,7 +172,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     background: #2c3e50;
-    top: 80px;
+    top: 202px;
     left: -100%;
     text-align: center;
     transition: all 0.5s;
@@ -154,10 +195,6 @@ a:hover {
   }
 }
 @media (max-width: 720px) {
-  header {
-    text-align: center;
-    font-size: 28px;
-  }
   .btn {
     position: absolute;
     top: 50%;
@@ -174,7 +211,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     background: #2c3e50;
-    top: 80px;
+    top: 185px;
     left: -100%;
     text-align: center;
     transition: all 0.5s;
@@ -198,7 +235,7 @@ a:hover {
   }
   .btnBookIssue {
     border-radius: 20px;
-    background-color: #0082e6;
+    background-color: rgb(36, 35, 35);
     text-align: center;
     /* width: 400px; */
     /* height: 70px; */
@@ -211,7 +248,7 @@ a:hover {
 }
   .btnViewStatus {
     border-radius: 20px;
-    background-color: #0082e6;
+    background-color: rgb(36, 35, 35);
     text-align: center;
     /* width: 400px; */
     /* height: 70px; */
@@ -225,7 +262,7 @@ a:hover {
 
 .btnBookRecommandation {
   border-radius: 20px;
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
   text-align: center;
   /* width: 400px; */
   /* height: 70px; */
@@ -237,17 +274,14 @@ a:hover {
   color: white;
 }
 }
+
 @media (max-width: 307px) {
-  header {
-    text-align: center;
-    font-size: 28px;
-  }
   .checkbtn {
     display: block;
     margin-top: -6px;
   }
   label.logo{
-    color: white;
+    color: black;
     font-size: 20px;
     line-height: 55px;
     padding: 0 15px;

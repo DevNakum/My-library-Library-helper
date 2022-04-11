@@ -19,7 +19,7 @@
 </head>
 
 <body class="image">
-  <header>Library Helper - My Library</header>
+  <header><img src="2n1.png" alt="logo"></header>
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">

@@ -11,7 +11,7 @@
 </head>
 
 <body class="image">
-  <header>Library Helper - My Library</header>
+  <header><img src="2n1.png" alt="logo"></header>
   <nav>
     <input type="checkbox" id="check" />
     <label for="check" class="checkbtn">
@@ -30,9 +30,9 @@
     ?>
     <label class="logo"><?php echo $uid;?> </label>
     <ul>
-      <li><a herf="#">Home</a></li>
-      <li><a class="active" herf="#">Credit</a></li>
-      <li><a herf="#">About us</a></li>
+      <li><a herf="#" onclick="window.location='userProfile.php'">Home</a></li>
+      <li><a class="active" herf="#">QR Scanner</a></li>
+      <li><a herf="#" onclick="window.location='../../about_us.php'">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
   </nav>

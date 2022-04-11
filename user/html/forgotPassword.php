@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../css/forgotPassword.css">
 </head>
 <body class="image">
-  <header>Library Helper-My Library</header>
+  <header><img src="2n1.png" alt="logo"></header>
       <div class="maindiv">
         <h3>Forgot Password</h3>
         <div class="inputs">
