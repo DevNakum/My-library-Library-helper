@@ -1,4 +1,5 @@
-<?php include "header.php";
+<?php 
+include "header.php";
 // session_start();
 if ($_SESSION["user_role"] == '0') {
   header("Location: {$hostname}/user/html/");
@@ -35,24 +36,42 @@ if ($_SESSION["user_role"] == '0') {
 <head>
   <link rel="stylesheet" href="../css/bookReturnReport.css">
 </head>
-<div class="search">
-  <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
-  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
-  <button class="btnDownload" name="btnDownload">Download</button>
-</div>
-
+<form method="post" action="book_return_report.php">
 
 <?php
   include 'config.php';
   $date = $_GET['date'];
 
   $sql1 = "select trb.admin_id,trb.book_id,tb.grp_id,tb.book_name,tb.book_edition,tb.book_author,trb.user_id,trb.return_date from tbl_book_copies tbc join tbl_books tb on tb.grp_id = tbc.grp_id join tbl_return_book trb where tbc.book_id = trb.book_id and trb.return_date = '{$date}'";
-  // echo $sql1;
+
+
+  // if the search button is pressed...
+  if(isset($_GET['txtSearch'])) {
+    // just for debugging...
+    // print_r($_POST);
+
+    // it must contain some value in search bar ....
+    if(isset($_GET['txtSearch']) && $_GET['txtSearch'] != '') {
+      // if it does, then query to fetch like data...
+      $search = $_GET['txtSearch'];
+      $sql1 .= "and LOWER(tb.book_name) LIKE '{$search}%'";
+    }
+  }
+  // echo $sql;
   // die();
+
+  // hidden fields....
+  echo '<input type="hidden" name="query_last" value="'.$sql1.'">';
+  echo '<input type="hidden" name="date" value="'.$date.'">';
 
   $result = mysqli_query($conn,$sql1) or die("query1 failed");
   if(mysqli_num_rows($result)){
 ?>
+<div class="search">
+  <input type="text" placeholder=" Enter Name.." name="txtSearch" class="txtSearch" autocomplete="off">
+  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
+  <button class="btnDownload" name="btnDownload">Download</button>
+</div>
 <div class="tblReturnReport" style="overflow-x:auto;">
   <table>
     <tr>
@@ -74,23 +93,24 @@ if ($_SESSION["user_role"] == '0') {
       <td><?php echo $row['admin_id'];?></td>
       <td><?php echo $row['return_date'];?></td>
     </tr>
-    <tr>
+    <!-- tr>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-    </tr>
+    </tr> -->
   </table>
 </div>
 <?php
     }
   }
   else{
-    echo "<h1>No book found</h1>";
+    echo "<h1 style='text-align: center; color: red;'>No book found</h1>";
   }
 ?>
+</form>
 <!-- </body>
 
 </html> -->

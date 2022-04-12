@@ -1,5 +1,13 @@
 <?php
+<<<<<<< HEAD
   session_start();
+=======
+
+  include 'header.php';
+  if(!isset($_SESSION)) {
+    session_start();
+  }
+>>>>>>> 8c6f1496f08024656ca156db814965a986446dd3
   if($_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
@@ -16,17 +24,36 @@
   <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 </head>
 
-<body>
-  <h1 style="text-align: center">
-    Qr code reader using JavaScript and HTML5
-  </h1>
-  <hr />
+<body class="image">
   <script src="html5-qrcode.min.js"></script>
   <style>
     .result {
       background-color: green;
       color: #fff;
       padding: 20px;
+    }
+
+    .col {
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+    }
+
+    .col button {
+      padding: 7px 7px 7px 7px;
+      font-size: 15px;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
     }
 
     .row {
@@ -38,8 +65,8 @@
     <div class="col">
       <div style="width: 500px" id="reader"></div>
     </div>
-    <div class="col" style="padding: 30px">
-      <h4>SCAN RESULT</h4>
+    <div class="col" style="padding: 50px">
+      <!-- <h4>SCAN RESULT</h4> -->
       <!-- <div id="result">Result Here</div> -->
       <div id="result"></div>
     </div>

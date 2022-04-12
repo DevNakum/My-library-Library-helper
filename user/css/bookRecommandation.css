@@ -5,21 +5,75 @@
   list-style: none;
   box-sizing: border-box;
 }
-
+.image{
+  background-image: url("janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+  opacity: 1;
+  background-size: 1750px;
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ 
+}
+img{
+  max-width: 100%;
+}
 body {
   font-family: montserrat;
 }
-
-header {
-  text-align: center;
-  font-size: 60px;
-}
-
 nav {
-  background: #0082e6;
+  background: rgb(219, 219, 219);
   height: 60px;
   width: 100%;
 }
+label.logo {
+  color: black;
+  font-size: 35px;
+  line-height: 55px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+  background: rgb(158, 143, 143);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: black;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
 
 .switch {
   position: relative;
@@ -59,11 +113,11 @@ nav {
 }
 
 input:checked+.slider {
-  background-color: #2196F3;
+  background-color: rgb(36, 35, 35);
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px rgb(36, 35, 35);
 }
 
 input:checked+.slider:before {
@@ -81,63 +135,17 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
-label.logo {
-  color: white;
-  font-size: 35px;
-  line-height: 55px;
-  padding: 0 100px;
-  font-weight: bold;
-}
-
-nav ul {
-  float: right;
-  margin-right: 20px;
-}
-
-nav ul li {
-  display: inline-block;
-  line-height: 60px;
-  margin: 0 5px;
-}
-
-nav ul li a {
-  color: white;
-  font-size: 17px;
-  padding: 7px 13px;
-  border-radius: 3px;
-  text-transform: uppercase;
-}
-
-a.active,
-a:hover {
-  background: #1b9bff;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
-}
 
 .search {
-  margin-top: 8%;
+  margin-top: 4%;
 }
 
 #optDept {
-  margin-left: 7%;
+  margin-left: 15%;
   padding: 17px 10px 17px 10px;
   font-size: 20px;
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
@@ -146,10 +154,11 @@ a:hover {
 }
 
 #optSem {
-  margin-left: 60%;
+  margin-left: 50%;
   padding: 17px 35px 17px 37px;
   font-size: 20px;
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
@@ -159,27 +168,40 @@ a:hover {
 
 .optDept {
   background-color: white;
-  color: #0082e6;
+  color: black;
 }
 
 .optSem {
   background-color: white;
-  color: #0082e6;
+  color: black;
   text-align: center;
 
 }
 
 .btnDownload {
   margin-left: 48.5%;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 13px 15px 13px 15px;
   font-size: 20px;
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   color: white;
 }
+
+/* Henil Mistry has added this. */
+.btnViewRec {
+  padding: 7px 7px 7px 7px;
+  font-size: 15px;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}  
 
 #optSem:hover {
   opacity: 0.8;
@@ -228,7 +250,8 @@ a:hover {
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
   color: white;
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
   cursor: pointer;
 }
 
@@ -241,7 +264,8 @@ a:hover {
       margin-left: 42%;
       padding: 17px 35px 17px 37px;
       font-size: 20px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
@@ -260,28 +284,39 @@ a:hover {
 }
 
 @media (max-width: 858px) {
-  header {
-      text-align: center;
-      font-size: 32px;
-  }
+ 
 
   .btnDownload {
       margin-left: 48.5%;
       margin-top: 5%;
       padding: 13px 15px 13px 15px;
       font-size: 20px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
       color: white;
   }
 
+  /* Henil Mistry has added this. */
+  .btnViewRec {
+    padding: 7px 7px 7px 7px;
+    font-size: 15px;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+  }
+
   #optSem {
       margin-left: 32%;
       padding: 17px 35px 17px 37px;
       font-size: 20px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
@@ -298,7 +333,7 @@ a:hover {
       width: 100%;
       height: 100vh;
       background: #2c3e50;
-      top: 96px;
+      top: 204px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -330,16 +365,14 @@ a:hover {
       padding: 10px 10px 10px 10px;
       border-radius: 10px;
       color: white;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       cursor: pointer;
   }
 }
 
 @media (max-width: 720px) {
-  header {
-      text-align: center;
-      font-size: 28px;
-  }
+ 
 
 
   #optDept {
@@ -353,7 +386,8 @@ a:hover {
       margin-left: 35%;
       padding: 10px 18px 10px 18px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
@@ -365,11 +399,24 @@ a:hover {
       margin-top: 4%;
       padding: 10px 10px 10px 10px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
       color: white;
+  }
+
+  /* Henil Mistry has added this. */
+  .btnViewRec {
+    padding: 6px 6px 6px 6px;
+    font-size: 10px;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
   }
 
   .checkbtn {
@@ -382,7 +429,7 @@ a:hover {
       width: 100%;
       height: 100vh;
       background: #2c3e50;
-      top: 80px;
+      top: 204px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -419,16 +466,14 @@ a:hover {
       padding: 10px 10px 10px 10px;
       border-radius: 10px;
       color: white;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       cursor: pointer;
   }
 }
 
 @media (max-width: 520px) {
-  header {
-      text-align: center;
-      font-size: 28px;
-  }
+ 
 
   .btnSubmit {
       margin-left: 39%;
@@ -436,7 +481,8 @@ a:hover {
       padding: 10px 10px 10px 10px;
       border-radius: 10px;
       color: white;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       cursor: pointer;
   }
 
@@ -452,7 +498,8 @@ a:hover {
       margin-left: 21%;
       padding: 10px 17px 10px 17px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
@@ -468,11 +515,24 @@ a:hover {
       margin-top: 4%;
       padding: 10px 10px 10px 10px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
       color: white;
+  }
+
+  /* Henil Mistry has added this. */
+  .btnViewRec {
+    padding: 6px 6px 6px 6px;
+    font-size: 10px;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
   }
 
   .checkbtn {
@@ -485,7 +545,7 @@ a:hover {
       width: 100%;
       height: 100vh;
       background: #2c3e50;
-      top: 80px;
+      top: 181px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -514,10 +574,7 @@ a:hover {
 }
 
 @media (max-width: 307px) {
-  header {
-      text-align: center;
-      font-size: 28px;
-  }
+ 
 
   label.logo {
       color: white;
@@ -533,7 +590,8 @@ a:hover {
       padding: 10px 10px 10px 10px;
       border-radius: 10px;
       color: white;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       cursor: pointer;
   }
 
@@ -551,7 +609,8 @@ a:hover {
       margin-top: 5%;
       padding: 10px 17px 10px 17px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
@@ -567,11 +626,24 @@ a:hover {
       margin-top: 6%;
       padding: 10px 10px 10px 10px;
       font-size: 12px;
-      background-color: #0082e6;
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219, 219, 219);
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
       color: white;
+  }
+
+  /* Henil Mistry has added this. */
+  .btnViewRec {
+    padding: 6px 6px 6px 6px;
+    font-size: 10px;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
   }
 
   .checkbtn {
@@ -584,7 +656,7 @@ a:hover {
       width: 100%;
       height: 90vh;
       background: #2c3e50;
-      top: 114px;
+      top: 152px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -616,13 +688,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border: 1px solid #ddd;
-  background-color: #8dc6f1;
+  border: 1px solid black;
+  background-color: rgb(219, 219, 219);
 }
 
 .tblReturnReport {
-  margin-top: 0%; /* Changed Here  */
-  margin-bottom: 5%; /* Added Here */
+  margin-top: 3%;
+  margin-bottom: 7%;
 }
 
 th,
@@ -632,7 +704,8 @@ td {
 }
 
 th {
-  background-color: #0082e6;
+  background-color: rgb(36, 35, 35);
+  color: white;
 }
 
 tr:nth-child(even) {

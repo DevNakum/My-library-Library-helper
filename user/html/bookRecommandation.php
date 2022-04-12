@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="../css/bookRecommandation.css">
 </head>
 
-<body>
+<body class="image">
     <header>
-        Library Helper - My Library
+        <img src="2n1.png" alt="logo">
     </header>
     <nav>
         <input type="checkbox" id="check" />
@@ -25,9 +25,9 @@
         </label>
         <label class="logo"><?php echo $_SESSION["user_id"];?></label>
         <ul>
-            <li><a herf="#">Home</a></li>
-            <li><a class="active" herf="#">Credit</a></li>
-            <li><a herf="#">About us</a></li>
+            <li><a herf="#" onclick="window.location='userProfile.php'">Home</a></li>
+            <li><a class="active" herf="#">Book Recommendation</a></li>
+            <li><a herf="#" onclick="window.location='../../about_us.php'">About us</a></li>
             <li><a herf="#">Contact us</a></li>
         </ul>
     </nav>
@@ -152,7 +152,7 @@
                             echo "<tr>";
                             echo "<td>";
                             // echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
-                            echo '<button name="subject[]" value="'.$row['sub_code'].'">View Recommendation</button>';
+                            echo '<button name="subject[]" value="'.$row['sub_code'].'" class="btnViewRec">View Recommendation</button>';
 
                             echo "</td>";
                             echo "<td>".$row['sub_code']."</td>";

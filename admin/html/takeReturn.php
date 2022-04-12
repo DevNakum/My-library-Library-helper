@@ -1,4 +1,5 @@
-<?php include "header.php"; 
+<?php 
+    include "header.php"; 
     if($_SESSION["user_role"]=='0')
     {
         header("Location: {$hostname}/user/html/");
@@ -66,10 +67,11 @@ if ($_GET['check']=='1' || isset($_POST['submit'])) {
 
                     </tr>
                 <?php } //end of while loop ?>
-                <tr>
+                <!-- useless fellow -->
+                <!-- <tr>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> -->
             </table>
         </div>
 
@@ -83,7 +85,7 @@ if ($_GET['check']=='1' || isset($_POST['submit'])) {
     }    //end of if   
 }       //end of if (isset)
 else
-    echo "<h1>No book...</h1>"
+    echo "<h1 style='text-align: center; color: red;'>No book...</h1>"
 ?>
 
 

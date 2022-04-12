@@ -7,9 +7,9 @@
   <title>Home Page</title>
 </head>
 
-<body>
+<body class="image">
 
-  <header>Library Helper-My Library</header>
+  <header>My Library - Library Helper</header>
   <div class="btnAllBtn">
     <div>
       <button class="btnLogin" name="btnLogin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>

@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
   session_start();
+=======
+  session_start();  
+>>>>>>> 8c6f1496f08024656ca156db814965a986446dd3
   if($_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
@@ -18,8 +22,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
-<body>
-  <header>Library Helper - My Library</header>
+<body class="image">
+  <header><img src="2n1.png" alt="logo"></header>
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">

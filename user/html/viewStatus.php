@@ -1,4 +1,5 @@
 <?php 
+    
     include "config.php";
     session_start();
     if($_SESSION["user_role"]=='1')
@@ -16,8 +17,8 @@
     <link rel="stylesheet" href="../css/viewStatus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-<body>
-    <header>Library Helper - My Library</header>
+<body class="image">
+    <header><img src="2n1.png" alt="logo"></header>
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
@@ -25,9 +26,9 @@
     </label>
       <label class="logo"><?php echo $_SESSION["user_id"];?></label>
       <ul>
-          <li><a herf="#">Home</a></li>
-          <li><a class="active"herf="#">Credit</a></li>
-          <li><a herf="#">About us</a></li>
+          <li><a herf="#" onclick="window.location='userProfile.php'">Home</a></li>
+          <li><a class="active"herf="#">View Status</a></li>
+          <li><a herf="#" onclick="window.location='../../about_us.php'">About us</a></li>
           <li><a herf="#">Contact us</a></li>
       </ul>
   </nav>  
