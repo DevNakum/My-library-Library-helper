@@ -251,6 +251,7 @@
 
     ?>
 </form>
+<button class="btnBack" name="btnDownloadBack" onclick="window.location='Admin_Profile.php'">Back</button>
 <!-- 
 </body>
 

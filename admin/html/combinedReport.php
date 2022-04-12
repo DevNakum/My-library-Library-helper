@@ -4,7 +4,7 @@
   include_once "config.php";
   if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
   {
-      header("Location: {$hostname}/user/html/");
+      header("Location: {$hostname}/admin/html/");
   }
 ?>
 <!DOCTYPE html>
@@ -58,22 +58,12 @@
           $query_fetch_books = "SELECT * FROM tbl_books WHERE LOWER(book_name) LIKE '{$search}%'";
         }
       }
-
-
-      // if download button is pressed...
-      if(isset($_POST['btnDownload'])) {
-
-        // include 'download_combined_report.php';
-
-      }
-
-
     ?>
 
     <div class="search">
             <input type="text" placeholder=" Enter Name.." name="txtSearch" class="txtSearch" autocomplete="off">   
             <button type="submit" class="btnSearch" name="btnSearch">Search</button>    
-            <button class="btnDownload" name="btnDownload" onclick="window.location='download_combined_report.php'">Download</button>      
+            <button class="btnDownload" name="btnDownload">Download</button>      
     </div>
     
     
@@ -132,7 +122,7 @@
   </div>
 
 </form>
-<button class="btnBack" name="btnDownload" onclick="window.location='Admin_Profile.php'">Back</button>
+<button class="btnBack" name="btnDownloadBack" onclick="window.location='Admin_Profile.php'">Back</button>
 <!-- form ends over here -->
 <!-- </body>
 

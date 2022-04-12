@@ -132,7 +132,7 @@
                     
                     // if sem key is not 'select'...
                     if($_POST['sem']!='select') { // then make table header...
-                        echo "<tr><th>See Recommendation?</th><th>Subject Code</th><th>Subject Name</th></tr>";
+                        echo "<tr><th>Subject Code</th><th>Subject Name</th><th>See Recommendation?</th></tr>";
                     } else { // otherwise print message...
                         echo "<h2 style='text-align: center;'>Now, Please Select Semester and press Go to proceed!</h2>";
                     }
@@ -150,13 +150,13 @@
                     if(mysqli_num_rows($fetch_result) > 0) {
                         while($row = mysqli_fetch_assoc($fetch_result)) {
                             echo "<tr>";
-                            echo "<td>";
+                            echo "<td>".$row['sub_code']."</td>";
+                            echo "<td>".$row['sub_name']."</td>";
+                             echo "<td>";
                             // echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';
                             echo '<button name="subject[]" value="'.$row['sub_code'].'" class="btnViewRec">View Recommendation</button>';
 
                             echo "</td>";
-                            echo "<td>".$row['sub_code']."</td>";
-                            echo "<td>".$row['sub_name']."</td>";
                             echo "</tr>";
                         }
                     }

@@ -42,8 +42,6 @@
 
 <form method="post" action="book_report.php">
 
-
-
 <?php
   include 'config.php';
   $date = $_GET['date'];

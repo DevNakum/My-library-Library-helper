@@ -2,6 +2,7 @@
 
 # included config file, connection to database...
 include 'config.php';
+session_start();
 if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
 {
 	header("Location: {$hostname}/user/html/");

@@ -106,7 +106,7 @@
 
                 //fetching all books and showing all options to recommend...
                 // query to do so...
-                $query_fetch_books = "SELECT grp_id,book_name,book_edition,book_author FROM tbl_books";
+                $query_fetch_books = "SELECT grp_id,book_name,book_edition,book_author FROM tbl_books ORDER BY book_name";
                 $fetch_result = mysqli_query($conn,$query_fetch_books) or die("All books fetching Unsuccessfull!");
 
                 if(mysqli_num_rows($fetch_result) > 0) {
