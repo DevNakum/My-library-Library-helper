@@ -41,7 +41,7 @@
 
     // echo $uid;
     // $uid = md5($uid);
-    header("Location: $hostname/admin/html/takeReturn.php?check=1&uid=$uid");
+    header("Location: {$hostname}/admin/html/takeReturn.php?check=1&uid=$uid");
 
     mysqli_close($conn);
 ?>

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if($_SESSION["user_role"]=='1')
+  if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
   }
@@ -37,7 +37,7 @@
     <label class="logo"><?php echo $row['user_id'];?></label>
     <ul>
       <li><a class="active" herf="#">Home</a></li>
-      <li><a herf="#">Log Out</a></li>
+      <li><a href="logout.php">Log out</a></li>
       <li><a herf="../../about_us.php" onclick="window.location='../../about_us.php'">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>

@@ -32,6 +32,7 @@
             <li><a class="active" href="">Combine Report</a></li>
             <li><a href="../../about_us.php">About us</a></li>
             <li><a href="#">Log out</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
     </nav>
 </body>

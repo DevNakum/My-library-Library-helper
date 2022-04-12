@@ -52,11 +52,11 @@ if(!isset($_SESSION))
         header("Content-Disposition: attachment; filename=CombinedReport_".date('Ymd').".xls");
         echo $output;
         exit();
-        header("Location: $hostname/admin/html/combinedReport.php");
+        header("Location: {$hostname}/admin/html/combinedReport.php");
     }
   } elseif (isset($_POST['txtSearch']) && $_POST['txtSearch']!=' ') {
     $data = $_POST['txtSearch'];
-    header("Location: $hostname/admin/html/combinedReport.php?txtSearch=$data");
+    header("Location: {$hostname}/admin/html/combinedReport.php?txtSearch=$data");
   }
 }
 

@@ -1,10 +1,6 @@
 <?php
-
-  include 'header.php';
-  if(!isset($_SESSION)) {
-    session_start();
-  }
-  if($_SESSION["user_role"]=='1')
+  session_start();
+  if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
   }

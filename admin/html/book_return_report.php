@@ -52,6 +52,7 @@ if(isset($_POST['btnDownload'])) {
 } elseif (isset($_POST['txtSearch']) && $_POST['txtSearch']!=' ') {
   $data = $_POST['txtSearch'];
   header("Location: $hostname/admin/html/bookReturnReport.php?txtSearch=$data&date={$_POST['date']}");
+  header("Location: {$hostname}/admin/html/bookReturnReport.php?txtSearch=$data&date={$_POST['date']}");
 }
 
 

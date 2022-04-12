@@ -145,7 +145,7 @@
         include 'config.php';
         //echo "console.log('Hello! From JS-PHP')";
         //header("location: $hostname/admin/html/add_book.php");
-        $location = "$hostname/admin/html/add_book.php";
+        $location = "{$hostname}/admin/html/add_book.php";
         echo "let name = '".$location."';";
         
 
