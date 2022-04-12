@@ -1,5 +1,11 @@
 <?php
     include 'config.php';
+
+    if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
+    {
+        header("Location: {$hostname}/user/html/");
+    }
+
     $date = $_POST['date'];
     // echo $date;
     $issued_return = $_POST['btnBookIssueReport'];

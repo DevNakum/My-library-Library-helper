@@ -1,6 +1,6 @@
 <?php include_once "header.php";
     include_once 'config.php';
-    if($_SESSION["user_role"]=='0')
+    if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
     {
         header("Location: {$hostname}/user/html/");
     }      

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if($_SESSION["user_role"]=='0')
+  if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
   {
     header("Location: {$hostname}/user/html/");
   }
