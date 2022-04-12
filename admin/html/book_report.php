@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once("config.php");
 if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
 {

@@ -1,37 +1,40 @@
-<?php include_once "header.php";
+<?php 
+    // include_once "header.php";
+    session_start();
     include_once 'config.php';
     if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
     {
         header("Location: {$hostname}/user/html/");
     }      
 ?>
-<!-- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <!-- <link rel="stylesheet" href="../css/add_book.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="../css/setRecommandation.css">
 </head>
 
-<body>
-    <header>
-        Library Helper - My Library
-    </header>
+<body class="image">
+    <header><img src="2n1.png" alt="logo"></header>
     <nav>
-        <input type="checkbox" id="check" />
+        <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">ID No.</label>
+        <label class="logo"><?php echo $_SESSION["user_id"];?></label>
         <ul>
             <li><a href="Admin_Profile.php">Home</a></li>
-            <li><a href="combinedReport.php">Combine Report</a></li>
-            <li><a class="active" href="#">Credit</a></li>
+            <li><a class="active" href="">Set Recommendation</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Log out</a></li>
         </ul>
-    </nav> -->
+    </nav>
+</body>
     <head>
         <link rel="stylesheet" href="../css/setRecommandation.css">
     </head>
@@ -166,7 +169,7 @@
 
                     // if sem key is not 'select'...
                     if($_POST['sem']!='select') { // then make table header...
-                        echo "<tr><th>Recommed?</th><th>Subject Code</th><th>Subject Name</th></tr>";    
+                        echo "<tr><th>Subject Code</th><th>Subject Name</th><th>Recommed?</th></tr>";    
                     } else { // otherwise print message...
                         echo "<h2 style='text-align: center;'>Now, Please Select Semester and press Go to proceed!</h2>";
                     }
@@ -183,9 +186,10 @@
 
                     if(mysqli_num_rows($fetch_result) > 0) {
                         while($row = mysqli_fetch_assoc($fetch_result)) {
-                            echo "<tr>";
+                            echo "<tr>";            
+                            echo "<td>".$row['sub_code']."</td>";
+                            echo "<td>".$row['sub_name']."</td>";
                             echo "<td>";
-
                             // ask for help
                             // based on this page is being reirected, the data/buttons will be shown...
                             if(isset($_POST['id'])) {
@@ -194,12 +198,9 @@
                                 echo '<span class="slider round"></span>';
                                 echo "</label>";    
                             } else {
-                                echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'">Recommend</a>';  
+                                echo '<a href="editRecommandation.php?dept='.$dept_name.'&sem='.$sem_no.'&sub='.$row['sub_code'].'" class="btnViewRec">Recommend</a>';  
                             }
-
                             echo "</td>";
-                            echo "<td>".$row['sub_code']."</td>";
-                            echo "<td>".$row['sub_name']."</td>";
                             echo "</tr>";
                         }
                         $table_generated = true;
@@ -250,6 +251,7 @@
 
     ?>
 </form>
+<button class="btnBack" name="btnDownloadBack" onclick="window.location='Admin_Profile.php'">Back</button>
 <!-- 
 </body>
 

@@ -1,4 +1,5 @@
-<?php include "header.php"; 
+<?php 
+  include "header.php"; 
   if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
   {
       header("Location: {$hostname}/user/html/");

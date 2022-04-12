@@ -98,5 +98,5 @@
     } //endof while loop
   }   //end of if
   ?>
-
+<button class="btnBack" name="btnDownloadBack" onclick="window.location='userProfile.php'">Ok</button>
 </html>
