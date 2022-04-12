@@ -37,7 +37,7 @@
     <label class="logo"><?php echo $row['user_id'];?></label>
     <ul>
       <li><a class="active" herf="#">Home</a></li>
-      <li><a herf="#">Credit</a></li>
+      <li><a herf="#">Log Out</a></li>
       <li><a herf="../../about_us.php" onclick="window.location='../../about_us.php'">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
