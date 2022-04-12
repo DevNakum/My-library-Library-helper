@@ -32,7 +32,7 @@
             <li><a href="Admin_Profile.php">Home</a></li>
             <li><a class="active" href="">Add Book</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Log out</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
     </nav>
 </body>
@@ -57,7 +57,7 @@
                 }
 
                 // echo "grp_id : $grp_id";
-                header("Location: $hostname/admin/html/setRecommandation.php?id={$grp_id}");
+                header("Location: {$hostname}/admin/html/setRecommandation.php?id={$grp_id}");
             }
             else if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit_add'])) {
                 include 'save_data_add_book.php';
