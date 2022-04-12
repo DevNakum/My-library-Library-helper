@@ -55,6 +55,18 @@ nav {
     transition: .4s;
 }
 
+/* Henil Mistry has added this. */
+.btnViewRec {
+  padding: 7px 7px 7px 7px;
+  font-size: 15px;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}  
+
 .slider:before {
     position: absolute;
     content: "";
@@ -139,11 +151,11 @@ a:hover {
 }
 
 .search {
-    margin-top: 8%;
+    margin-top: 4%;
 }
 
 #optDept {
-    margin-left: 7%;
+    margin-left: 15%;
     padding: 17px 10px 17px 10px;
     font-size: 20px;
     background-color: rgb(36, 35, 35);
@@ -156,7 +168,7 @@ a:hover {
 }
 
 #optSem {
-    margin-left: 48%;
+    margin-left: 50%;
     padding: 17px 35px 17px 37px;
     font-size: 20px;
     background-color: rgb(36, 35, 35);
@@ -182,7 +194,7 @@ a:hover {
 
 .btnDownload {
     margin-left: 48.5%;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 13px 15px 13px 15px;
     font-size: 20px;
     background-color: rgb(36, 35, 35);
@@ -635,7 +647,8 @@ table {
 }
 
 .tblReturnReport {
-    margin-top: 7%;
+    margin-top: 3%;
+  margin-bottom: 7%;
 }
 
 th,

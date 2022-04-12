@@ -19,11 +19,10 @@
         </label>
         <label class="logo"><?php session_start(); echo $_SESSION["user_id"];?></label>
         <ul>
-            <li><a href="Admin_Profile.php">Home</a></li>
+            <li><a href="" class="active">Home</a></li>
             <li><a href="combinedReport.php">Combine Report</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a class="active" href="#">Log out</a></li>
+            <li><a href="#">Log out</a></li>
         </ul>
     </nav>
 </body>
