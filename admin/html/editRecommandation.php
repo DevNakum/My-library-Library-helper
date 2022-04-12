@@ -31,7 +31,7 @@
             <li><a class="active" href="">Edit Recommendation</a></li>
             <li><a href="setRecommandation.php">Change Subject</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Log out</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
     </nav>
 </body>

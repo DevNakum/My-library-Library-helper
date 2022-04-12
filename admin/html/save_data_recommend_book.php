@@ -77,5 +77,5 @@
 	}
 
 	// jumping in setRecommandation page...
-	header("location: $hostname/admin/html/setRecommandation.php");
+	header("location: {$hostname}/admin/html/setRecommandation.php");
 ?>

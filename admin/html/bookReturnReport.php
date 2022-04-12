@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_role']) || $_SESSION["user_role"] == '0') {
             <li><a class="active" href="">Return Report</a></li>
             <li><a href="seeReport.php">See Report</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Log out</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
     </nav>
 </body>

@@ -26,14 +26,13 @@
           </form>
 
         <?php
-          
-          
-        
           if (isset($_POST['btnGenOtp']))
           {
+            // query for check if email is exists in databse or not
             $check_email_is_exits = "select user_mail from tbl_users";
             $result_of_check = mysqli_query($conn,$check_email_is_exits) or die("check_email_is_exits is failed");
             
+            // take email from input
             $email = $_POST['txtEmail'];
 
             $flag=FALSE;
@@ -41,24 +40,21 @@
               while($row = mysqli_fetch_assoc($result_of_check))
               {
                 if($email == $row['user_mail'])
-                  $flag = TRUE;
+                  $flag = TRUE;   //if email is exists in database its fine
               }
             }
  
             if($flag)
             {
-              $otp = (rand(100000,999999));
+              $otp = (rand(100000,999999));     // generate 6 digits otp
               $to = $email;
               $subject = "Forgot password";
               $message = "OTP for change password is ".$otp;
-              // $from = "ndev2003@gmail.com";
               $headers = "From: ndev2003@gmail.com";
 
               if(mail($to, $subject, $message, $headers)){
                 echo "Mail has successfully sent to ".$email;
-              
-                
-                
+
                 echo '
                 <form action="updatePassword.php" method="post">
                   <div class="Fields">
@@ -78,12 +74,12 @@
               }
               else
               {
-                echo "wrong email";
+                echo "<h4 style='text-align: center; color: red;'>wrong email</h4>";
               }
 
             }
             else
-              echo "No email id found";
+              echo "<h4 style='text-align: center; color: red;'>No email id found</h4>";
           }
         ?> 
 

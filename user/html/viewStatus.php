@@ -1,8 +1,7 @@
 <?php 
-    
     include "config.php";
     session_start();
-    if($_SESSION["user_role"]=='1')
+    if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='1')
     {
       header("Location: {$hostname}/user/html/");
     }

@@ -38,23 +38,26 @@
           
           include 'config.php';
 
-          $user_email = $_GET['mail'];
+          $user_email = $_GET['mail'];      // get the email from url
           if(isset($_POST['btnSubmit'])){
-            $newpassword = md5($_POST['txtPassword']);
-            $newConfirmPassword = md5($_POST['txtConfirmPassword']);
+            $newpassword = md5($_POST['txtPassword']);      //new password
+            $newConfirmPassword = md5($_POST['txtConfirmPassword']);    //new confirm password
 
            
-            if($newpassword == $newConfirmPassword)
+            if($newpassword == $newConfirmPassword)     /// ceheck condition
             {
+              // update password in database
               $update_password = "update tbl_users set user_password = '{$newpassword}' where user_mail = '{$user_email}'";
               
               $result_update_password = mysqli_query($conn,$update_password) or die("update_password query failed");
 
-              header("Location: localhost/user/html/");
+              // after successfully changed password it wil be redirect in login page
+              header("Location: {$localhost}/user/html/");
             } 
             else
             {
-              echo "Password doesn't matche";
+              echo "<h4 style='text-align: center; color: red;'>Password doesn't match</h4>";
+              
             }
           }
         ?>

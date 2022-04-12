@@ -27,7 +27,7 @@ if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
 	$bq = $row['book_quantity'];
 	$actual_b_id -= $bq;
 	echo "Quantity : $bq and Book ID : $actual_b_id";
-	header("location: $hostname/admin/html/qrCode.php?b_quantity=$bq&b_id=$actual_b_id");
+	header("location: {$hostname}/admin/html/qrCode.php?b_quantity=$bq&b_id=$actual_b_id");
 
 } else {
 
