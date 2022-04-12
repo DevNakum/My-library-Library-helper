@@ -26,9 +26,9 @@ $fetch_result = mysqli_query($conn,$query_fetch_recommendation);
 // reat all rows are dynamic...
 if(mysqli_num_rows($fetch_result) > 0) {
 
-	echo '<h1 style="text-align: center; color: red;">Recommendation for subject : '.$sub_name.'</h1>';
+	echo '<h1 style="text-align: center; color: white; text-decoration: underline;">Recommendation for subject : '.$sub_name.'</h1><br>';
 
-	echo '<div class="tblReturnReport" style="overflow-x:auto;">';
+	// echo '<div class="tblReturnReport" style="overflow-x:auto;">';
 	// table started from here
 	echo "<table>";
 	// first row is header
@@ -51,11 +51,11 @@ if(mysqli_num_rows($fetch_result) > 0) {
 
 	echo "</table>";
 	// table ends here
-	echo '</div>';
+	// echo '</div>';
 
 } else {
-	echo '<h1 style="text-align: center; color: red;">No Recommendation Exist! for subject : '. $sub_name .'</h1>';
-	echo '<h3 style="text-align: center; color: grey;">Press Go or Back button.</h3>';
+	echo '<h1 style="text-align: center; color: white; text-decoration: underline;">No Recommendation Exist! for subject : '. $sub_name .'</h1>';
+	echo '<h2 style="text-align: center; color: red;">Press Go or Back button.</h2>';
 }
 
 echo "<button class='btnDownload'>Back</button>";

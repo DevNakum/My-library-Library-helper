@@ -10,19 +10,25 @@ body {
     font-family: montserrat;
 }
 
-header {
-    text-align: center;
-    font-size: 60px;
-}
+.image{
+    background-image: url("janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+    opacity: 1;
+    background-size: 1750px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   
+  }
 
 nav {
-    background: #0082e6;
+    background: rgb(219, 219, 219);
     height: 60px;
     width: 100%;
 }
 
 label.logo {
-    color: white;
+    color: black;
     font-size: 35px;
     line-height: 55px;
     padding: 0 100px;
@@ -41,7 +47,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
@@ -50,14 +56,14 @@ nav ul li a {
 
 a.active,
 a:hover {
-    background: #1b9bff;
+    background: rgb(158, 143, 143);
     transition: 0.5s;
     cursor: pointer;
 }
 
 .checkbtn {
     font-size: 30px;
-    color: white;
+    color:black;
     float: right;
     line-height: 80px;
     margin-right: 40px;
@@ -81,7 +87,9 @@ a:hover {
     width: 0;
     height: 0;
 }
-
+img{
+    max-width: 100%;
+}
 .slider {
     position: absolute;
     cursor: pointer;
@@ -107,11 +115,11 @@ a:hover {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: rgb(36, 35, 35);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px rgb(36, 35, 35);
 }
 
 input:checked+.slider:before {
@@ -137,25 +145,25 @@ input:checked+.slider:before {
 .txtSearch {
     margin-left: 7%;
     padding: 10px 10px 10px 10px;
-    border: 2px solid rgb(161, 160, 160);
+    border: 2px solid black;
     border-radius: 7px;
     font-size: 20px;
+    background-color: white;
 }
 
 .btnSearch {
     margin-left: 15px;
     padding: 10px 10px 10px 10px;
     font-size: 20px;
-    background-color: #0082e6;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     color: white;
 }
 
-.btnSearch:hover {
-    opacity: 0.8;
-}
+
 
 .bookIssue {
     background: #0082e6;
@@ -186,20 +194,25 @@ input:checked+.slider:before {
     font-size: 25px;
 }
 
-/* .submit {
+.submit {
     margin-top: 7%;
-} */
+}
 
 .btnSubmit {
-    /* margin-left: 48%; */
+    margin-left: 48%;
     font-size: 13px;
     padding: 7px 10px 7px 10px;
     border-radius: 10px;
     color: white;
-    background-color: #0082e6;
+    font-weight: bold;
+    background-color: rgb(36, 35, 35);
+    box-shadow: 4px 4px rgb(219, 219, 219);
     cursor: pointer;
 }
 
+.btnSearch:hover {
+    opacity: 0.8;
+}
 .btnSubmit:hover {
     opacity: 0.8;
 }
@@ -217,17 +230,15 @@ input:checked+.slider:before {
     .txtSearch {
         margin-left: 2%;
         padding: 10px 10px 10px 10px;
-        border: 2px solid rgb(161, 160, 160);
+        border: 2px solid black;
         border-radius: 7px;
         font-size: 20px;
+        background-color: white;
     }
 }
 
 @media (max-width: 858px) {
-    header {
-        text-align: center;
-        font-size: 32px;
-    }
+  
 
     .checkbtn {
         display: block;
@@ -238,7 +249,7 @@ input:checked+.slider:before {
         width: 100%;
         height: 100vh;
         background: #2c3e50;
-        top: 96px;
+        top: 204px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
@@ -267,34 +278,34 @@ input:checked+.slider:before {
     .txtSearch {
         margin-left: -3%;
         padding: 10px 10px 10px 10px;
-        border: 2px solid rgb(161, 160, 160);
+        border: 2px solid black;
         border-radius: 7px;
         font-size: 20px;
+        background-color: white;
     }
 
     .btnSubmit {
         margin-left: 46%;
-        font-size: 13px;
-        padding: 7px 10px 7px 10px;
+        font-size: 20px;
+        padding: 10px 10px 10px 10px;
         border-radius: 10px;
         color: white;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         cursor: pointer;
     }
 }
 
 @media (max-width: 720px) {
-    header {
-        text-align: center;
-        font-size: 28px;
-    }
+    
 
     .txtSearch {
         margin-left: -10%;
         padding: 10px 10px 10px 10px;
-        border: 2px solid rgb(161, 160, 160);
+        border: 2px solid  black;
         border-radius: 7px;
         font-size: 12px;
+        background-color: white;
     }
 
     .btnSubmit {
@@ -303,7 +314,8 @@ input:checked+.slider:before {
         padding: 10px 10px 10px 10px;
         border-radius: 10px;
         color: white;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         cursor: pointer;
     }
 
@@ -311,7 +323,8 @@ input:checked+.slider:before {
         margin-left: 12%;
         padding: 10px 10px 10px 10px;
         font-size: 12px;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         border-radius: 10px;
         cursor: pointer;
         font-weight: bold;
@@ -328,7 +341,7 @@ input:checked+.slider:before {
         width: 100%;
         height: 100vh;
         background: #2c3e50;
-        top: 80px;
+        top: 204px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
@@ -357,24 +370,23 @@ input:checked+.slider:before {
 }
 
 @media (max-width: 520px) {
-    header {
-        text-align: center;
-        font-size: 28px;
-    }
+    
 
     .txtSearch {
         margin-left: -25%;
         padding: 10px 10px 10px 10px;
-        border: 2px solid rgb(161, 160, 160);
+        border: 2px solid black;
         border-radius: 7px;
         font-size: 12px;
+        background-color: white;
     }
 
     .btnSearch {
         margin-left: 40px;
         padding: 10px 10px 10px 10px;
         font-size: 12px;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         border-radius: 10px;
         cursor: pointer;
         font-weight: bold;
@@ -391,7 +403,7 @@ input:checked+.slider:before {
         width: 100%;
         height: 100vh;
         background: #2c3e50;
-        top: 80px;
+        top: 181px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
@@ -424,19 +436,17 @@ input:checked+.slider:before {
         padding: 10px 10px 10px 10px;
         border-radius: 10px;
         color: white;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         cursor: pointer;
     }
 }
 
 @media (max-width: 307px) {
-    header {
-        text-align: center;
-        font-size: 28px;
-    }
+   
 
     label.logo {
-        color: white;
+        color: black;
         font-size: 20px;
         line-height: 55px;
         padding: 0 15px;
@@ -446,7 +456,7 @@ input:checked+.slider:before {
     .txtSearch {
         margin-left: -23%;
         padding: 10px 2px 10px 2px;
-        border: 2px solid rgb(161, 160, 160);
+        border: 2px solid black;
         border-radius: 7px;
         font-size: 12px;
     }
@@ -462,7 +472,8 @@ input:checked+.slider:before {
         margin-top: 5%;
         padding: 10px 10px 10px 10px;
         font-size: 12px;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         border-radius: 10px;
         cursor: pointer;
         font-weight: bold;
@@ -479,7 +490,7 @@ input:checked+.slider:before {
         width: 100%;
         height: 90vh;
         background: #2c3e50;
-        top: 114px;
+        top: 152px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
@@ -508,11 +519,12 @@ input:checked+.slider:before {
 
     .btnSubmit {
         margin-left: 38%;
-        font-size: 13px;
+        font-size: 15px;
         padding: 10px 10px 10px 10px;
         border-radius: 10px;
         color: white;
-        background-color: #0082e6;
+        background-color: rgb(36, 35, 35);
+        box-shadow: 4px 4px rgb(219, 219, 219);
         cursor: pointer;
     }
 }
@@ -521,8 +533,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
-    background-color: #8dc6f1;
+    border: 1px solid black;
+    background-color: rgb(219, 219, 219);
 }
 
 .tblReturnReport {
@@ -533,12 +545,14 @@ th,
 td {
     text-align: center;
     padding: 8px;
+    
 }
 
 th {
-    background-color: #0082e6;
+    background-color: rgb(36, 35, 35);
+    color: white;
 }
 
 tr:nth-child(even) {
-    background-color: white
+    background-color: white;
 }

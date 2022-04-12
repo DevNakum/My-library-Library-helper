@@ -7,18 +7,28 @@
   }
   body {
     font-family: montserrat;
+    overflow-y: auto;
   }
-  header {
-    text-align: center;
-    font-size: 60px;
+  img{
+    max-width: 100%;
+  }
+  .image{
+    background-image: url("janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+    opacity: 1;
+    background-size: 1750px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   
   }
   nav {
-    background: #0082e6;
+    background: rgb(219, 219, 219);
     height: 60px;
     width: 100%;
   }
   label.logo {
-    color: white;
+    color: black;
     font-size: 35px;
     line-height: 55px;
     padding: 0 100px;
@@ -34,7 +44,7 @@
     margin: 0 5px;
   }
   nav ul li a {
-    color: white;
+    color: black;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
@@ -42,13 +52,13 @@
   }
   a.active,
   a:hover {
-    background: #1b9bff;
+    background: rgb(158, 143, 143);
     transition: 0.5s;
     cursor: pointer;
   }
   .checkbtn {
     font-size: 30px;
-    color: white;
+    color: black;
     float: right;
     line-height: 80px;
     margin-right: 40px;
@@ -67,7 +77,8 @@
     z-index: -100;
   }
   .btnAddBook {
-    background: #0082e6;
+    background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
     border-radius: 33px;
     padding: 16px 127px 14px 118px;
     color: white;
@@ -76,7 +87,8 @@
     font-size: 25px;
   }
   .btnTakeReturn {
-    background: #0082e6;
+    background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);;
     border-radius: 33px;
     margin-top: 40px;
     padding: 16px 119px 14px 99px;
@@ -85,7 +97,8 @@
     font-size: 25px;
   }
   .btnSetRecommandation {
-    background: #0082e6;
+    background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
     border-radius: 33px;
     margin-top: 40px;
     padding: 16px 56px 14px 48px;
@@ -94,7 +107,8 @@
     font-size: 25px;
   }
   .btnSeeReport{
-    background: #0082e6;
+    background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
     border-radius: 33px;
     margin-top: 42px;
     padding: 16px 108px 14px 118px;
@@ -112,10 +126,6 @@
     }
   }
   @media (max-width: 858px) {
-    header {
-      text-align: center;
-      font-size: 32px;
-    }
     .checkbtn {
       display: block;
     }
@@ -124,7 +134,7 @@
       width: 100%;
       height: 100vh;
       background: #2c3e50;
-      top: 80px;
+      top: 204px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -145,12 +155,19 @@
     #check:checked ~ ul {
       left: 0;
     }
+    .btnAddBook {
+      background-color: rgb(36, 35, 35);
+      box-shadow: 4px 4px rgb(219 219 219);
+      border-radius: 33px;
+      padding: 16px 127px 14px 118px;
+      color: white;
+      margin-top: -36px;
+      font-weight: bold;
+      font-size: 25px;
+  }
+  
   }
   @media (max-width: 720px) {
-    header {
-      text-align: center;
-      font-size: 28px;
-    }
     .checkbtn {
       display: block;
       margin-top: -6px;
@@ -160,7 +177,7 @@
       width: 100%;
       height: 100vh;
       background: #2c3e50;
-      top: 80px;
+      top: 204px;
       left: -100%;
       text-align: center;
       transition: all 0.5s;
@@ -183,16 +200,14 @@
       left: 0;
     }
     .btnAddBook {
-      background: #0082e6;
       border-radius: 20px;
-      padding: 16px 57px 14px 65px;
+      padding: 16px 74px 14px 76px;
       color: white;
       margin-top: 200px;
       font-weight: bold;
       font-size: 17px;
   }
   .btnTakeReturn {
-    background: #0082e6;
     border-radius: 20px;
     margin-top: 40px;
     padding: 16px 68px 14px 65px;
@@ -201,7 +216,6 @@
     font-size: 17px;
 }
 .btnSetRecommandation {
-  background: #0082e6;
   border-radius: 20px;
   margin-top: 40px;
   padding: 16px 24px 14px 30px;
@@ -210,7 +224,6 @@
   font-size: 17px;
 }
 .btnSeeReport {
-  background: #0082e6;
   border-radius: 20px;
   margin-top: 42px;
   padding: 16px 77px 14px 69px;
@@ -220,19 +233,23 @@
 }
   }
 
+
   
-@media (max-width: 307px) {
-  header {
-    text-align: center;
-    font-size: 28px;
-  }
+@media (max-width: 376px) {
   label.logo{
-    color: white;
     font-size: 25px;
     line-height: 55px;
     padding: 0 15px;
     font-weight: bold;
   }
+  .btnAddBook {
+    border-radius: 20px;
+    padding: 16px 74px 14px 76px;
+    color: white;
+    margin-top: 200px;
+    font-weight: bold;
+    font-size: 17px;
+}
   .checkbtn {
     display: block;
     margin-top: -6px;
@@ -242,7 +259,7 @@
     width: 100%;
     height: 100vh;
     background: #2c3e50;
-    top: 120px;
+    top: 204px;
     left: -100%;
     text-align: center;
     transition: all 0.5s;

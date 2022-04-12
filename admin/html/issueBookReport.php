@@ -1,4 +1,5 @@
-<?php include "header.php";
+<?php 
+  include "header.php";
   // session_start();
   if($_SESSION["user_role"]=='0')
   {
@@ -39,25 +40,45 @@
 <head>
   <link rel="stylesheet" href="../css/issueBookReport.css">
 </head>
-<div class="search">
-  <input type="text" placeholder=" Enter ID.." name="txtSearch" class="txtSearch" autocomplete="off">
-  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
-  <button class="btnDownload" name="btnDownload">Download</button>
-</div>
+
+<form method="post" action="book_report.php">
+
 
 
 <?php
   include 'config.php';
   $date = $_GET['date'];
  
+  // query to fetch book issued report...
   $sql1 = "select tib.book_id,tb.grp_id,tb.book_name,tb.book_edition,tb.book_author,tib.user_id,tib.issued_date from tbl_book_copies tbc join tbl_books tb on tb.grp_id = tbc.grp_id join tbl_issued_books tib where tbc.book_id = tib.book_id and tib.issued_date = '{$date}'";
+
+  // if the search button is pressed...
+  if(isset($_GET['txtSearch'])) {
+    // just for debugging...
+    // print_r($_POST);
+
+    // it must contain some value in search bar ....
+    if(isset($_GET['txtSearch']) && $_GET['txtSearch'] != '') {
+      // if it does, then query to fetch like data...
+      $search = $_GET['txtSearch'];
+      $sql1 .= "and LOWER(tb.book_name) LIKE '{$search}%'";
+    }
+  }
   // echo $sql;
   // die();
 
-  $result = mysqli_query($conn,$sql1) or die("query1 failed");
-  if(mysqli_num_rows($result)){
+  // hidden fields....
+  echo '<input type="hidden" name="query_last" value="'.$sql1.'">';
+  echo '<input type="hidden" name="date" value="'.$date.'">';
 
+  $result = mysqli_query($conn,$sql1) or die("query1 failed");
+  if(mysqli_num_rows($result) > 0){
 ?>
+<div class="search">
+  <input type="text" placeholder=" Enter Name.." name="txtSearch" class="txtSearch" autocomplete="off">
+  <button type="submit" class="btnSearch" name="btnSearch">Search</button>
+  <button class="btnDownload" name="btnDownload">Download</button>
+</div>
 <div class="tblReturnReport" style="overflow-x:auto;">
   <table>
     <tr>
@@ -77,15 +98,17 @@
       <td name="bookEdition"><?php echo $row['book_edition'];?></td>
       <td name="bookAuthor"><?php echo $row['book_author'];?></td>
     </tr>
+  <?php }?>
   </table>
 </div>
 <?php
-    }
+    
   }
   else{
-    echo "<h1>No book found</h1>";
+    echo "<h1 style='text-align: center; color: red;'>No book found</h1>";
   }
 ?>
+</form>
 <!-- </body>
 
 </html> -->
