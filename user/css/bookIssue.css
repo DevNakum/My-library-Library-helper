@@ -17,6 +17,18 @@ body{
  background-attachment: fixed;
  background-size: cover;
 }
+/*This is added by henil*/
+.btnBack{
+  margin-left: 50%;
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  background-color: rgb(36, 35, 35);
+  box-shadow: 4px 4px rgb(219, 219, 219);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
 img{
   max-width: 100%;
 }

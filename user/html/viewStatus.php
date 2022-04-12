@@ -93,17 +93,28 @@
 
             $date_today = date_create(date("Y-m-d"));
             $return_date = date_create($row['expected_return_date']);
-            $difference = date_diff($return_date,$date_today); # it is an array...
+            $difference = date_diff($date_today,$return_date); # it is an array...
+            // print_r($difference); // just for debugging...
             echo '<tr>
                   <td>'.$row1["book_name"].'</td>
                   <td>'.$row1["book_author"].'</td>
                   <td>'.$row1["book_edition"].'</td>
                   <td>'.$row["issued_date"].'</td>';
 
-            if($difference->days > 1) {
+            // if the difference is negative...
+            if($difference->invert == 1) {
+              // limit is exceeded...
+              echo '<td style="background: red;">Limit Exceed! Action may be taken!</td>';
+            }
+            // if 0 days remaining...give one chance..
+            else if($difference->days == 0) {
+              echo '<td style="background: Orange;">Have to return today! 0 days remaining.</td>';
+            }
+            // if 5 days remaining...give warning...
+            else if($difference->days >= 1 && $difference->days <= 5) {
+              echo '<td style="background: green;">Only '.$difference->days.' days remaining.</td>';
+            } else { // else just show...
               echo '<td>'.$difference->days.' days</td>';
-            } else {
-              echo '<td>'.$difference->days.' day</td>';
             }
                   
             echo '<td>'.$row["expected_return_date"].'</td>
