@@ -1,5 +1,9 @@
 <?php 
 include_once("config.php");
+if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
+{
+    header("Location: {$hostname}/user/html/");
+}
 
 // for debugging...
 // print_r($_POST);
