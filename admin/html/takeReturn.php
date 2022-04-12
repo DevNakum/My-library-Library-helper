@@ -31,7 +31,7 @@
             <li><a href="Admin_Profile.php">Home</a></li>
             <li><a class="active" href="">Take Return</a></li>
             <li><a href="../../about_us.php">About us</a></li>
-            <li><a href="#">Log out</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
     </nav>
 </body>

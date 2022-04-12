@@ -37,6 +37,7 @@
         <?php
           
           include 'config.php';
+          
 
           $user_email = $_GET['mail'];      // get the email from url
           if(isset($_POST['btnSubmit'])){

@@ -21,6 +21,10 @@
       include 'config.php';
 
       session_start();
+      if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='1')
+      {
+        header("Location: {$hostname}/user/html/");
+      }
       $uid = $_SESSION["user_id"];
       
       $sql = "select * from tbl_users where user_id = '{$uid}'";
