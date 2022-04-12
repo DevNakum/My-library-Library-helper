@@ -1,5 +1,6 @@
 <?php
     // echo "On login page!";
+    session_start();
     if($_SESSION["user_role"]=='1')
     {
         header("Location: {$hostname}/user/html/");

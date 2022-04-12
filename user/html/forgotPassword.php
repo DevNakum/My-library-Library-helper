@@ -6,6 +6,21 @@
   <title>Forgot Password</title>
   <link rel="stylesheet" href="../css/forgotPassword.css">
 </head>
+
+<?php 
+  
+  $to_mail = "henilmistry74496@gmail.com";
+  $subject = "Test";
+  $body = "<h1>Hello! Henu</h1>";
+  $headers = "From: henilmistry688@gmail.com";
+
+  if(mail($to_mail, $subject, $body, $headers)) {
+    echo "Mail sent";
+  } else {
+    echo "You Stupidddd!";
+  }
+
+ ?>
 <body class="image">
   <header><img src="2n1.png" alt="logo"></header>
       <div class="maindiv">
