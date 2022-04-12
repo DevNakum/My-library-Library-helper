@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
   session_start();
-=======
-  session_start();  
->>>>>>> 8c6f1496f08024656ca156db814965a986446dd3
   if($_SESSION["user_role"]=='1')
   {
     header("Location: {$hostname}/user/html/");
