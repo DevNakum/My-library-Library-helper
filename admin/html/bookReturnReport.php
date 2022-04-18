@@ -68,7 +68,7 @@ if (!isset($_SESSION['user_role']) || $_SESSION["user_role"] == '0') {
   echo '<input type="hidden" name="date" value="'.$date.'">';
 
   $result = mysqli_query($conn,$sql1) or die("query1 failed");
-  if(mysqli_num_rows($result)){
+  if(mysqli_num_rows($result) > 0){
 ?>
 <div class="search">
   <input type="text" placeholder=" Enter Name.." name="txtSearch" class="txtSearch" autocomplete="off">
@@ -96,15 +96,6 @@ if (!isset($_SESSION['user_role']) || $_SESSION["user_role"] == '0') {
       <td><?php echo $row['admin_id'];?></td>
       <td><?php echo $row['return_date'];?></td>
     </tr>
-    <!-- tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr> -->
-  </table>
 </div>
 <?php
     }
@@ -113,6 +104,7 @@ if (!isset($_SESSION['user_role']) || $_SESSION["user_role"] == '0') {
     echo "<h1 style='text-align: center; color: red;'>No book found</h1>";
   }
 ?>
+</table>
 </form>
 <!-- </body>
 

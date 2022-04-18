@@ -12,16 +12,16 @@
 
 <?php 
   
-  $to_mail = "henilmistry74496@gmail.com";
-  $subject = "Test";
-  $body = "<h1>Hello! Henu</h1>";
-  $headers = "From: henilmistry688@gmail.com";
+  // $to_mail = "henilmistry74496@gmail.com";
+  // $subject = "Test";
+  // $body = "<h1>Hello! Henu</h1>";
+  // $headers = "From: henilmistry688@gmail.com";
 
-  if(mail($to_mail, $subject, $body, $headers)) {
-    echo "Mail sent";
-  } else {
-    echo "You Stupidddd!";
-  }
+  // if(mail($to_mail, $subject, $body, $headers)) {
+  //   echo "Mail sent";
+  // } else {
+  //   echo "You Stupidddd!";
+  // }
 
  ?>
 <body class="image">

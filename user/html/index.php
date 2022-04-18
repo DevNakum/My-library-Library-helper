@@ -108,42 +108,44 @@
         <div class="inputs">
           <div class="Fields">
             <div class="Fieldset">
-              <input type="text" name="txtEmail" class="Before-FS" id="txtSignUpEmail" required="" autocomplete="off">
+              <input type="text" name="txtEmail" class="Before-FS" id="txtSignUpEmail" autocomplete="off" required>
               <h1 class="Fs-H"><span>Email</span></h1>
               <label class="placeholder">Email</label>
             </div>
           </div>
           <div class="Fields">
             <div class="Fieldset">
-              <input type="text" name="txtUsername" class="Before-FS" required="" autocomplete="off">
+              <input type="text" name="txtUsername" class="Before-FS" autocomplete="off" required>
               <h1 class="Fs-H"><span>Id</span></h1>
               <label class="placeholder">Id</label>
             </div>
           </div>
           <div class="Fields">
             <div class="Fieldset">
-              <input type="password" name="txtPassword" class="Before-FS" required="">
+              <input type="password" name="txtPassword" class="Before-FS" required>
               <h1 class="Fs-H"><span>Password</span></h1>
               <label class="placeholder">Password</label>
             </div>
           </div>
           <div class="Fields">
             <div class="Fieldset">
-              <input type="password" name="txtConfirmPassword" class="Before-FS" required="">
+              <input type="password" name="txtConfirmPassword" class="Before-FS" required>
               <h1 class="Fs-H"><span>Confirm Password</span></h1>
               <label class="placeholder">Confirm Password</label>
             </div>
           </div>
 
         </div>
-        <button type="submit" onclick="submit();" name="btnSignup">Sign Up</button>
+        <button type="submit" name="btnSignup">Sign Up</button>
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
         <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
       </div>
     </form>
-  </div>
+    </div>
+
+    
 
   <script>
     // Get the modal
@@ -172,9 +174,6 @@
       }
     }
 
-    function submit() {
-      window.location.href = "userProfile.php"
-    }
   </script>
 
 </body>
