@@ -1,6 +1,7 @@
 <?php
   // include "header.php";
   session_start(); 
+  include "config.php";
   include_once "config.php";
   if(!isset($_SESSION['user_role']) || $_SESSION["user_role"]=='0')
   {

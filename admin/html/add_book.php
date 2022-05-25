@@ -48,7 +48,7 @@
         <?php  
 
             if(isset($_POST['btnRecommandation'])) {
-                // print_r($_POST);
+                print_r($_POST);
                 $query_fetch_grp_id="SELECT grp_id FROM tbl_books WHERE book_name='{$_POST['book_name']}' AND book_edition={$_POST['book_edition']} AND book_author='{$_POST['book_author']}' AND book_quantity={$_POST['book_quantity']}";
 
                 $fetch_result = mysqli_query($conn,$query_fetch_grp_id) or die("Group ID fetching faild!");
@@ -57,6 +57,7 @@
                 }
 
                 // echo "grp_id : $grp_id";
+                // header("Location: $hostname/admin/html/setRecommandation.php?id={$grp_id}");
                 header("Location: {$hostname}/admin/html/setRecommandation.php?id={$grp_id}");
             }
             else if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit_add'])) {

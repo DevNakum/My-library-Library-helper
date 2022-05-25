@@ -39,14 +39,14 @@
     
         $sql = "update tbl_book_copies set book_status = 'YES' where book_id = '{$bid}'";
         $result = mysqli_query($conn,$sql) or die("Query2 unsuccessful.");
+        header("Location: {$hostname}/user/html/bookIssue.php?bid=$bid");
+        die();
     }
-   
     else
     {
-?>
-        <h3>Sorry this book is already issued by someone</h3>
-<?php
+        // <h3>Sorry this book is already issued by someone</h3>
+        header("Location: {$hostname}/user/html/bookIssue.php?bid=$bid&err=1");
     }
-    header("Location: {$hostname}/user/html/bookIssue.php?bid=$bid");
+    
     // mysqli_close($conn);
 ?>  
