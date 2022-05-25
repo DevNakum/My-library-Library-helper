@@ -29,8 +29,8 @@
     
     <label class="logo"><?php echo $_SESSION["user_id"];?> </label>
     <ul>
-      <li><a herf="#">Home</a></li>
-      <li><a class="active" herf="#">Credit</a></li>
+      <li><a herf="userProfile.php" onclick="window.location='userProfile.php'">Home</a></li>
+      <li><a class="active" herf="#">Book Issue</a></li>
       <li><a herf="#">About us</a></li>
       <li><a herf="#">Contact us</a></li>
     </ul>
@@ -41,6 +41,15 @@
 
   
   $bid = $_GET['bid'];
+  if(isset($_GET['err'])) {
+    if($_GET['err']>=1) {
+      echo "<div style='justify-content: center;'><h2 style='color: red; text-align:center; justify-content:center;'>Sorry! This book is already issued by you or someone else.</h2></div>";
+      die();
+    } 
+   } //else {
+  //   echo "<h1 style='color: red; text-align:center;'>Invalid access! Wrong URL!</h1>";
+  //   die();
+  // }
   // die();
   
   $sql1 = "select tib.book_id,tb.grp_id,tb.book_name,tb.book_edition,tb.book_author,tib.expected_return_date,tib.user_id,tib.issued_date from tbl_book_copies tbc join tbl_books tb on tb.grp_id = tbc.grp_id join tbl_issued_books tib where tbc.book_id = tib.book_id and tib.book_id = $bid";
