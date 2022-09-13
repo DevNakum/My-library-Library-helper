@@ -33,7 +33,7 @@ if(isset($_POST['btnGenerate']) || isset($_POST['btnSubmit'])) {
 
 } else {
 
-	# data fetched from post request.... =======================================================================
+	# data fetched from post request.... ==============================================	=========================
 	// print_r($_POST);
 	echo "<h3 style='text-align: center;' >Now you can click on Set Recommendation to recommend this book and then generate QR codes!</h3>";
 	$b_name = $_POST['txtBookName'];
