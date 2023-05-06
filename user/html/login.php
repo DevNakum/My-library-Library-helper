@@ -2,10 +2,10 @@
     // echo "On login page!";
     session_start();
     include "config.php";
-    if(!isset($_SESSION['user_role']))
-    {
-        header("Location: {$hostname}/user/html/");
-    }
+    // if(!isset($_SESSION['user_role']))
+    // {
+    //     header("Location: {$hostname}/user/html/");
+    // }
 
     
     if (isset($_POST['btnLogin'])) {
@@ -16,7 +16,7 @@
         
         $sql = "select user_id,user_role from tbl_users where user_id = '{$username}' and user_password = '{$password}'";
 
-        // echo $sql;
+        echo $sql;
         // die();
         $result = mysqli_query($conn, $sql) or die("Queury Unsuccessful");
 
